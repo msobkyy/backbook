@@ -1,0 +1,127 @@
+/*---Search menu-----*/
+.search_area {
+  position: absolute;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg-primary);
+  box-shadow: 0 12px 12px var(--shadow-1), inset 0 0 0 0 var(--shadow-inset);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all 0.2s;
+  -webkit-font-smoothing: antialiased;
+  z-index: 1;
+  min-height: 400px;
+  max-height: 70vh;
+  padding: 8px 6px 10px 6px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.search_wrap {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.search_area .search {
+  padding: 10px 44px 10px 12px;
+  width: 252px;
+  gap: 4px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-forth);
+  padding: 10px 20px 10px 13px;
+  border-radius: 50px;
+  cursor: text;
+  min-width: 233px;
+}
+.input {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-family: inherit;
+  padding-left: 2px;
+}
+.search_area .search svg {
+  transform: translateY(1px);
+}
+
+.input::placeholder {
+  transform: translateY(-2px);
+}
+
+.input:focus::placeholder {
+  transform: translateY(-1px);
+}
+
+.search_history {
+  width: 100%;
+}
+
+.search_history_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.search_history_header span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.search_history_header a {
+  cursor: pointer;
+  color: var(--blue-color);
+}
+
+/*---Search menu-----*/
+
+.search_results {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+.search_result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.search_result_img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.search_result span {
+  transform: translateY(-5px);
+}
+
+.search_item {
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+.search_user_item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 10px;
+}

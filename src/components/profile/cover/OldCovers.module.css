@@ -1,0 +1,49 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 100%;
+  max-width: 700px;
+  min-height: 70vh;
+  padding: 0;
+  margin: 8px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--divider);
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+.header div {
+  position: absolute;
+  right: 0;
+}
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.old_photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px 0;
+  max-height: 150px;
+  overflow: auto;
+}
+.old_photos img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}

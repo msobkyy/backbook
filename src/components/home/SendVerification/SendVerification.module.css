@@ -1,0 +1,63 @@
+.ActiveAccount {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  font-size: smaller;
+}
+.done {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  font-size: smaller;
+  align-items: center;
+  justify-content: center;
+}
+.done div:nth-child(2) {
+  margin: 0 !important;
+}
+
+.ActiveAccount span {
+  color: var(--color-secondary);
+}
+.ActiveAccount a {
+  color: var(--blue-color);
+  cursor: pointer;
+  width: fit-content;
+}
+.ActiveAccount a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1175px) {
+  .ActiveAccount,
+  .done {
+    width: 84%;
+  }
+}
+@media (max-width: 1030px) {
+  .ActiveAccount,
+  .done {
+    width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .ActiveAccount,
+  .done {
+    width: 93%;
+  }
+}
+
+@media (max-width: 885px) {
+  .ActiveAccount,
+  .done {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .ActiveAccount,
+  .done {
+    width: 100%;
+  }
+}

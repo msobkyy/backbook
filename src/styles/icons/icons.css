@@ -1,0 +1,775 @@
+.friends_requests_icon {
+  background-image: url(../../../public/icons/icons11.png);
+  background-position: 0px -117px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  -webkit-filter: invert(10%);
+}
+.friends_suggestions_icon {
+  background-image: url(../../../public/icons/icons11.png);
+  background-position: 0px -75px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(10%);
+  display: inline-block;
+}
+.all_friends_icon {
+  background-image: url(../../../public/icons/icons11.png);
+  background-position: 0px -96px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(10%);
+  display: inline-block;
+}
+.birthdays_icon {
+  background-image: url(../../../public/icons/icons11.png);
+  background-position: 0px -138px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(10%);
+  display: inline-block;
+}
+.m_post_icon {
+  background-image: url(../../../public/icons/icons12.png);
+  background-position: 0px -132px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_story_icon {
+  background-image: url(../../../public/icons/icons13.png);
+  background-position: 0px -387px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_room_icon {
+  background-image: url(../../../public/icons/icons14.png);
+  background-position: 0px -542px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_page_icon {
+  background-image: url(../../../public/icons/icons14.png);
+  background-position: 0px -521px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_ad_icon {
+  background-image: url(../../../public/icons/icons14.png);
+  background-position: 0px -1004px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_group_icon {
+  background-image: url(../../../public/icons/icons14.png);
+  background-position: 0px -479px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_event_icon {
+  background-image: url(../../../public/icons/icons14.png);
+  background-position: 0px -647px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_post_mar {
+  background-image: url(../../../public/icons/icons13.png);
+  background-position: 0px -366px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.m_post_job {
+  background-image: url(../../../public/icons/icons14.png);
+  background-position: 0px -626px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.report_filled_icon {
+  background-image: url(../../../public/icons/icons15.png);
+  background-position: 0px -25px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.settings_filled_icon {
+  background-image: url(../../../public/icons/icons16.png);
+  background-position: -21px -228px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.help_filled_icon {
+  background-image: url(../../../public/icons/icons17.png);
+  background-position: 0px -487px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.dark_filled_icon {
+  background-image: url(../../../public/icons/icons17.png);
+  background-position: 0px -340px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.logout_filled_icon {
+  background-image: url(../../../public/icons/icons15.png);
+  background-position: 0px -46px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.right_icon {
+  background-image: url(../../../public/icons/icons18.png);
+  background-position: -83px -13px;
+  background-size: auto;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(50%);
+}
+.privacy_checkup_icon {
+  background-image: url(../../../public/icons/icons15.png);
+  background-position: 0px -67px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.privacy_shortcuts_icon {
+  background-image: url(../../../public/icons/icons19.png);
+  background-position: 0px -495px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.activity_log_icon {
+  background-image: url(../../../public/icons/icons20.png);
+  background-position: -25px -250px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.news_icon {
+  background-image: url(../../../public/icons/icons21.png);
+  background-position: 0px -239px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.language_icon {
+  background-image: url(../../../public/icons/icons22.png);
+  background-position: 0px -658px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.arrow_back_icon {
+  background-image: url(../../../public/icons/icons18.png);
+  background-position: 0px -46px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.help_center_icon {
+  background-image: url(../../../public/icons/icons17.png);
+  background-position: 0px -487px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.email_icon {
+  background-image: url(../../../public/icons/icons22.png);
+  background-position: 0px -532px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.info_filled_icon {
+  background-image: url(../../../public/icons/icons23.png);
+  background-position: 0px -355px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.keyboard_icon {
+  background-image: url(../../../public/icons/icons24.png);
+  background-position: 0px -242px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.amm_s_ic {
+  background-image: url(../../../public/icons/icons12.png);
+  background-position: -34px -174px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  -webkit-filter: invert(40%);
+}
+.ad_choices_icon {
+  background-image: url(../../../public/icons/icons6.png);
+  background-position: 0 -126px;
+  background-size: auto;
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  transform: translateY(1px);
+  -webkit-filter: invert(40%);
+}
+
+.pin_icon {
+  background-image: url("../../../public/icons/icons1.png");
+  background-position: 0px -378px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.save_icon {
+  background-image: url("../../../public/icons/icons1.png");
+  background-position: 0px -63px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.embed_icon {
+  background-image: url("../../../public/icons/icons1.png");
+  background-position: 0px -126px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.copy_icon {
+  background-image: url("../../../public/icons/icons2.png");
+  background-position: 0px -568px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.edit_icon {
+  background-image: url("../../../public/icons/icons2.png");
+  background-position: 0px -610px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  -webkit-filter: invert(40%);
+}
+.turnOffNotifications_icon {
+  background-image: url("../../../public/icons/icons3.png");
+  background-position: 0px -138px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.delete_icon {
+  background-image: url("../../../public/icons/icons1.png");
+  background-position: 0px -399px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.date_icon {
+  background-image: url("../../../public/icons/icons4.png");
+  background-position: 0px -67px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.refresh_icon {
+  background-image: url("../../../public/icons/refresh.png");
+  background-position: 0px 0px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.archive_icon {
+  background-image: url("../../../public/icons/icons1.png");
+  background-position: 0px -84px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.trash_icon {
+  background-image: url("../../../public/icons/icons2.png");
+  background-position: 0px -799px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.like_icon {
+  background-image: url("../../../public/icons/icons5.png");
+  background-position: 0 -243px;
+  background-size: auto;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.comment_icon {
+  background-image: url("../../../public/icons/icons5.png");
+  background-position: 0 -205px;
+  background-size: auto;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.share_icon {
+  background-image: url("../../../public/icons/icons5.png");
+  background-position: 0 -262px;
+  background-size: auto;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.emoji_icon {
+  background-image: url("../../../public/icons/icons5.png");
+  background-position: 0px -434px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.camera_icon {
+  background-image: url("../../../public/icons/icons5.png");
+  background-position: 0px -366px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.gif_icon {
+  background-image: url("../../../public/icons/icons5.png");
+  background-position: 0px -451px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.sticker_icon {
+  background-image: url("../../../public/icons/icons5.png");
+  background-position: 0px -468px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.exit_icon {
+  background-image: url("../../../public/icons/icons6.png");
+  background-position: -126px -71px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+}
+.edit_icon {
+  background-image: url("../../../public/icons/icons18.png");
+  background-position: -34px -109px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.arrowDown_icon {
+  background-image: url("../../../public/icons/icons6.png");
+  background-position: -117px -130px;
+  background-size: auto;
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.emoji_icon_large {
+  height: 24px;
+  width: 24px;
+  background-image: url("../../../public/icons/icons7.png");
+  background-position: 0px -207px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(40%);
+  cursor: pointer;
+}
+.tag_icon {
+  height: 24px;
+  width: 24px;
+  background-image: url("../../../public/icons/icons7.png");
+  background-position: 0px -257px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.maps_icon {
+  height: 24px;
+  width: 24px;
+  background-image: url("../../../public/icons/icons8.png");
+  background-position: 0px -225px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.microphone_icon {
+  height: 24px;
+  width: 24px;
+  background-image: url("../../../public/icons/icons9.png");
+  background-position: 0px -100px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.addPhoto_icon {
+  background-image: url("../../../public/icons/icons7.png");
+  background-position: -25px -292px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.phone_icon {
+  background-image: url("../../../public/icons/icons7.png");
+  background-position: -25px -271px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(20%);
+}
+.camera_filled_icon {
+  background-image: url("../../../public/icons/icons25.png");
+  background-position: 0px -444px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.photo_icon {
+  background-image: url(../../../public/icons/icons35.png);
+  background-position: 0px -63px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(10%);
+}
+.upload_icon {
+  background-image: url(../../../public/icons/icons35.png);
+  background-position: 0px -126px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(10%);
+}
+.lifeEvent_icon {
+  background-image: url(../../../public/icons/icons34.png);
+  background-position: -25px -250px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.plus_icon {
+  background-image: url(../../../public/icons/icons22.png);
+  background-position: 0px -1341px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.frame_icon {
+  background-image: url(../../../public/icons/icons31.png);
+  background-position: 0px -130px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.minus_icon {
+  background-image: url(../../../public/icons/icons33.png);
+  background-position: 0px -50px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.plus_icon {
+  background-image: url(../../../public/icons/icons32.png);
+  background-position: 0px -25px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.crop_icon {
+  background-image: url(../../../public/icons/icons31.png);
+  background-position: 0px -113px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.temp_icon {
+  background-image: url(../../../public/icons/icons31.png);
+  background-position: 0px -96px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.unfriend_outlined_icon {
+  background-image: url(../../../public/icons/icons30.png);
+  background-position: 0px -105px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.turnOnNotification_icon {
+  background-image: url(../../../public/icons/icons29.png);
+  background-position: 0px -324px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.download_icon {
+  background-image: url(../../../public/icons/icons28.png);
+  background-position: 0px -42px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.fullscreen_icon {
+  background-image: url(../../../public/icons/icons28.png);
+  background-position: 0px -210px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.rounded_plus_icon {
+  background-image: url(../../../public/icons/icons27.png);
+  background-position: 0px 0px;
+  background-size: auto;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  -webkit-filter: invert(39%) sepia(57%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(147.75%)
+    hue-rotate(202deg) brightness(97%) contrast(96%);
+}
+.equalize_icon {
+  background-image: url(../../../public/icons/icons26.png);
+  background-position: 0px -63px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.manage_icon {
+  background-image: url(../../../public/icons/icons26.png);
+  background-position: 0px -165px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.list_icon {
+  background-image: url(../../../public/icons/icons26.png);
+  background-position: 0px -131px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.grid_icon {
+  background-image: url(../../../public/icons/icons26.png);
+  background-position: 0px -80px;
+  background-size: auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: invert(30%);
+}
+.info_icon {
+  background-image: url(../../../public/icons/icons36.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-position: 0 -60px;
+}
+.adChoices_icon {
+  background-image: url(../../../public/icons/icons37.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-position: 0 -60px;
+}
+.error_icon {
+  background-image: url(../../../public/icons/icons10.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 21px;
+  width: 21px;
+}
+.compact_icon {
+  background-image: url(../../../public/icons/icons38.png);
+  background-position: 0px -130px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.public_icon {
+  background-image: url(../../../public/icons/publicpack.png);
+  background-position: 0px -109px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.friends_home_icon {
+  background-image: url(../../../public/icons/icons40.png);
+  background-position: 0px -423px;
+  background-size: auto;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}

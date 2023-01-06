@@ -1,0 +1,9 @@
+.wrapper {
+  background: var(--bg-secondary);
+  height: 78vh;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}

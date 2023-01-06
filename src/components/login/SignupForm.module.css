@@ -1,0 +1,114 @@
+.signup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 350px;
+  box-shadow: 0 2px 4px var(--shadow-1);
+}
+.signup_header {
+  border-bottom: 1px solid var(--bg-third);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.signup_header i {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+.signup_header span:first-of-type {
+  font-size: 32px;
+  font-weight: 700;
+}
+.signup_header span:last-of-type {
+  color: var(--color-secondary);
+  font-size: 15px;
+}
+.line {
+  display: flex;
+  gap: 10px;
+}
+.col {
+  margin-bottom: 10px;
+}
+.colHeader {
+  align-items: center;
+  color: var(--color-secondary);
+  display: flex;
+  font-size: 13px;
+  gap: 4px;
+}
+.colHeader i {
+  margin-top: 3px;
+}
+.colHeader .error_icon {
+  margin-top: 30px;
+}
+.grid {
+  grid-gap: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  height: 35px;
+  margin-top: 5px;
+  width: 100%;
+}
+.gender {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid select {
+  border-radius: 5px;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  padding: 0 10px;
+}
+.grid label {
+  border-radius: 5px;
+  align-items: center;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.err_icon {
+  transform: scale(0.6);
+}
+.info {
+  color: var(--color-secondary);
+  font-size: 11px;
+  margin-top: 10px;
+}
+.info span {
+  color: var(--blue);
+  cursor: pointer;
+}
+.info span:hover {
+  text-decoration: underline;
+}
+.btn_wrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 10px;
+  width: 100%;
+}
+.btn_wrap button {
+  background: var(--green-color);
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  margin-top: 1rem;
+  width: 70% !important;
+}
+@media (min-width: 539px) {
+  .signup {
+    width: 400px;
+  }
+}

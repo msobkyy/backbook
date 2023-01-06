@@ -1,0 +1,105 @@
+.cover {
+  width: 100%;
+  padding: 18%;
+  background: var(--bg-third);
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  min-height: 170px;
+  background-size: cover;
+  background-position: center;
+}
+.edit_cover_wrapper {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.edit_cover {
+  background: var(--bg-third);
+  padding: 7px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #111;
+  border-radius: 10px;
+  cursor: pointer;
+  width: max-content;
+  position: relative;
+}
+.edit_cover i {
+  transform: scale(0.9);
+  margin-top: 4px;
+}
+.edit_cover span {
+  display: none;
+}
+.cover_upload_menu {
+  position: absolute;
+  right: 50%;
+  top: 41px;
+  padding: 10px;
+  z-index: 8;
+  width: 250px;
+}
+.open_cover_menu_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.cover_cropper {
+  width: 100%;
+  height: 100%;
+}
+.mediaClassName {
+  width: 100%;
+}
+
+.save_cover {
+  position: fixed;
+  left: 0;
+  top: 56px;
+  height: 56px;
+  width: 100%;
+  background: rgb(0 0 0 / 70%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btns button {
+  font-weight: 500;
+}
+
+.save_cover .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.save_cover .left i {
+  filter: invert(100%);
+}
+
+@media (min-width: 900px) {
+  .edit_cover span {
+    display: inline;
+  }
+}
+
+:global(.dark) .cover i {
+  filter: invert(100%);
+}

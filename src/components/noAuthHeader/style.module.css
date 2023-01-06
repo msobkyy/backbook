@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 56px;
+  z-index: 99;
+  background: var(--bg-primary);
+  width: 100%;
+  box-shadow: 0 2px 4px var(--shadow-1);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+  align-items: center;
+  color: var(--color-primary);
+}
+.login button {
+  height: auto;
+  font-weight: 500;
+}

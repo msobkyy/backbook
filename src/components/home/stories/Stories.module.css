@@ -1,0 +1,158 @@
+.stories {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 105px);
+  gap: 10px;
+  padding: 6px 0;
+  max-width: 590px;
+}
+
+.create_story_card {
+  position: relative;
+  height: 190px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-third);
+  cursor: pointer;
+  box-shadow: 0 1px 2px var(--sahdow-1);
+}
+
+.create_story_img {
+  position: absolute;
+  height: 75%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+.plus_story {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-color);
+  cursor: pointer;
+  border: 4px solid #fff;
+}
+
+.story_create_text {
+  color: var(--color-primary);
+  position: absolute;
+  left: 20%;
+  top: 87%;
+  font-size: 12px;
+}
+
+.story {
+  cursor: pointer;
+  position: relative;
+  height: 190px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px var(--shadow-1);
+}
+
+.story_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.2s;
+}
+
+.story:hover .story_img {
+  transform: scale(1.1);
+}
+
+.story_profile_pic {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--blue-color);
+}
+
+.story_profile_pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story_profile_name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  word-break: break-word;
+  width: 100px;
+  color: #fff;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.wrap {
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 1175px) {
+  .wrap {
+    width: 84%;
+  }
+}
+@media (max-width: 1030px) {
+  .wrap {
+    width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .wrap {
+    width: 93%;
+  }
+}
+@media (max-width: 805px) {
+  .story_profile_name,
+  .story_create_text {
+    display: none;
+  }
+  .wrap {
+    width: 100%;
+  }
+  .create_story_card {
+    filter: brightness(90%);
+  }
+
+  .stories .white_circle {
+    right: 5px;
+  }
+}
+
+@media (max-width: 620px) {
+  .wrap {
+    width: 100%;
+  }
+  .stories .white_circle {
+    display: none;
+  }
+
+  .createPost_icon {
+    font-size: 12px;
+  }
+
+  .createPost_icon svg {
+    width: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .wrap {
+    width: 100%;
+  }
+}

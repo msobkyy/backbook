@@ -1,0 +1,136 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 100%;
+  max-width: 700px;
+  min-height: 70vh;
+  padding: 0;
+  margin: 8px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--divider);
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+.header div {
+  position: absolute;
+  right: 0;
+}
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.textarea_blue {
+  width: 100%;
+  height: 80px;
+  resize: none;
+  border-radius: 7px;
+  outline-offset: 5px;
+  border-color: var(--bg-third);
+  padding: 0.8rem;
+  font-size: 16px;
+  font-family: inherit;
+  background: var(--bg-primary);
+  color: var(--color-primary);
+}
+
+.textarea_blue:focus {
+  outline-color: var(--blue-color);
+}
+
+.textarea_blue:hover {
+  border-color: var(--color-secondary);
+}
+
+.crooper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+}
+
+.crooper img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.slider input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 55%;
+  height: 4px;
+  background: #ced0d4;
+  cursor: pointer;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 2px var(--shadow-1), 0 2px 2px 0 var(--shadow-2),
+    inset 0 0 0 1px var(--shadow-inset);
+  border: 1px solid var(--bg-third);
+}
+
+.slider_circle {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btns {
+  border-top: 1px solid var(--divider);
+  padding-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btns button {
+  width: -webkit-fill-available;
+  font-weight: 500;
+}
+
+.old_photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px 0;
+  max-height: 150px;
+  overflow: auto;
+}
+.old_photos img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}

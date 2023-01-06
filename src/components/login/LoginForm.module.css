@@ -1,0 +1,84 @@
+.main {
+  height: 78vh;
+  min-height: 600px;
+  padding-top: 2rem;
+}
+.header {
+  margin: 0 auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header img {
+  width: 80%;
+}
+.header span {
+  font-size: 20px;
+}
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.login button {
+  height: 50px;
+}
+.login_wrapper {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+.form {
+  width: 100%;
+}
+.forgot {
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 14px;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+.signup_btn {
+  background: var(--green-color);
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  margin-top: 1rem;
+  width: 70% !important;
+}
+.extra {
+  font-size: 15px;
+}
+.error_text {
+  color: var(--color-error);
+  text-align: center;
+  margin: 0 auto 10px;
+}
+
+@media (min-width: 900px) {
+  .main {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .header {
+    width: 50%;
+    margin: 0 auto 8rem;
+    align-items: start;
+  }
+  .header span {
+    font-size: 27px;
+  }
+  .header img {
+    width: 300px;
+    margin-left: -1.4rem;
+  }
+  .login_wrapper {
+    width: 400px;
+  }
+}

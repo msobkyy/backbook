@@ -1,0 +1,26 @@
+.wrap {
+  width: 100%;
+  position: relative;
+}
+.wrap input {
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-third);
+  border-radius: 10px;
+  color: var(--color-primary);
+  font-size: 17px;
+  height: 50px;
+  margin-bottom: 10px;
+  outline: none;
+  padding-left: 10px;
+  width: 100%;
+}
+.error {
+  border-color: #b94a48 !important;
+}
+.wrap i {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}

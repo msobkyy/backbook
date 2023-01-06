@@ -1,0 +1,22 @@
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  padding: 5px;
+  border-radius: 50px;
+  gap: 5px;
+}
+.react {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.react img:hover {
+  transform: scale(1.3);
+}
+.react img {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}

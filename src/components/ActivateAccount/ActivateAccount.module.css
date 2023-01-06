@@ -1,0 +1,28 @@
+.card {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  width: 100%;
+  padding: 8px 5px;
+  text-align: center;
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+@media (max-width: 400px) {
+  .card {
+    min-width: 95%;
+  }
+}

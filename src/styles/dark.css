@@ -1,0 +1,17 @@
+.dark {
+  --bg-primary: #242526;
+  --bg-secondary: #18191a;
+  --bg-third: #3a3b3c;
+  --bg-forth: #3a3b3c;
+  --bg-fifth: #888888;
+  --color-primary: #e4e6eb;
+  --color-secondary: #b0b3b8;
+  --divider: #4e4e4e;
+  --light-blue-color: #2b4a68;
+}
+.dark .blur {
+  background: rgba(1, 1, 1, 0.53);
+}
+.dark .small_circle i {
+  filter: invert(100%);
+}

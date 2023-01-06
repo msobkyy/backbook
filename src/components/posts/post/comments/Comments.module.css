@@ -1,0 +1,160 @@
+.comments_wrap {
+  margin-bottom: 5px;
+}
+.info_wrap .left {
+  margin-top: 3px;
+}
+.left {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.info_wrap {
+  padding: 5px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 5px;
+  position: relative;
+}
+.comment_info {
+  background: var(--bg-forth);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 2px;
+  min-width: 170px;
+  max-width: max-content;
+  position: relative;
+}
+.comment_info .user {
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.comment_info_footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  margin: 0 10px;
+}
+.comment_info_footer p {
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.comment_info_footer p:hover,
+.view_more:hover,
+.comment_info .user:hover {
+  text-decoration: underline;
+}
+.c_time {
+  font-size: 12px;
+  font-weight: 400;
+}
+.view_more {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 10px;
+  color: var(--color-secondary);
+}
+.img_info {
+  width: max-content;
+  margin-top: 5px;
+}
+.img_info img {
+  width: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 var(--shadow-2);
+  border: 1px solid var(--divider);
+}
+.info_wrap .left {
+  margin-top: 3px;
+}
+.text {
+  font-size: 14px;
+  font-weight: 400;
+  word-break: break-all;
+}
+
+.left {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.left img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.right {
+  width: 100%;
+}
+
+.liked {
+  color: var(--blue-color);
+}
+.comment_likes {
+  position: absolute;
+  right: -4px;
+  bottom: -1px;
+  padding: 4px;
+  background: var(--bg-primary);
+  border-radius: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--shadow-1);
+}
+.comment_likes img {
+  width: 18px;
+}
+.comment_likes p {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-secondary);
+}
+.comment {
+  align-items: stretch;
+  overflow: hidden;
+  padding-top: 0;
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+.comment .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+}
+.tree {
+  position: absolute;
+  height: 20px;
+  left: -26.5px;
+  top: 5px;
+  width: 39px;
+  background: transparent;
+  border-radius: 0 0 0 20px;
+  border-left: 2px solid var(--divider);
+  border-bottom: 2px solid var(--divider);
+}
+.tree_line {
+  width: 1.7px;
+  background-color: var(--divider);
+  /* height: 100px; */
+  bottom: 16px;
+  position: absolute;
+  left: -1.7px;
+}
+.comment_user_wrap {
+  margin-top: 0 !important;
+}

@@ -1,0 +1,197 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 97%;
+  max-width: 500px;
+  padding: 0;
+  margin: 0 6px;
+  box-shadow: 0 6px 28px 0 var(--shadow-2), 0 2px 4px 0 var(--shadow-1),
+    inset 0 0 0 1px var(--shadow-inset);
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid var(--divider);
+  position: relative;
+}
+.header span {
+  font-size: 18px;
+  font-weight: 700;
+}
+.exit {
+  position: absolute;
+  right: 5px;
+}
+
+.profile {
+  display: flex;
+  gap: 10px;
+  margin: 0 15px;
+  padding: 15px 0;
+}
+.profile_1 {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+}
+.photo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px 0 var(--shadow-1);
+}
+.user_name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.privacy {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 4px;
+  background: var(--bg-third);
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.privacy img {
+  width: 12px;
+}
+.container {
+  max-height: 410px;
+  overflow-y: scroll;
+}
+.post_input {
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 5px 15px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 24px;
+  color: var(--color-primary);
+}
+.content textarea {
+  background: transparent;
+  min-height: 120px;
+  overflow-y: visible;
+}
+.post_background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emoji_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+.emoji_wrap img {
+  width: 39px;
+}
+
+.emoji_wrap i:hover {
+  filter: invert(80%);
+}
+.add_to {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--divider);
+  border-radius: 10px;
+  height: 57px;
+}
+.addto_text {
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.add_to .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.add_to .icons div {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.cfooter {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-top: 10px;
+}
+
+.background_wrap {
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+}
+.backgrounds {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: inherit;
+  overflow-x: scroll;
+  padding-left: 10px;
+}
+.backgrounds img {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.no_bg {
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--divider);
+  background: var(--bg-secondary);
+}
+.backgrounds {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.backgrounds::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.open_bg {
+  cursor: pointer;
+}
+
+.post_input_background {
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post_input_background textarea {
+  text-align: center;
+
+  /* height: inherit; */
+}
+
+:global(.dark) .privacy i,
+:global(.dark) .privacy img {
+  filter: invert(100%);
+}
