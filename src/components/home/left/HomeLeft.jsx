@@ -65,20 +65,20 @@ export default function HomeLeft({ user }) {
       )}
       <div className={styles.splitter}></div>
       <div className={styles.shortcut}>
-        <div className={styles.heading}>Your Shortcuts</div>
+        <div className={styles.heading}>Shortcuts</div>
         <div className={styles.edit_shortcut}>Edit</div>
       </div>
       <div className={styles.shortcut_list}>
         <Shortcut
-          link="https://www.youtube.com/"
-          img="../../images/ytb.png"
-          name="My Youtube channel"
+          link="https://github.com/msobkyy"
+          img="../../images/github.png"
+          name="Github"
         />
 
         <Shortcut
-          link="https://www.instagram.com/ahadjonalimov/"
-          img="../../images/insta.png"
-          name="My Instagram "
+          link="https://www.linkedin.com/in/msobkyy/"
+          img="../../images/linkedin.png"
+          name="Linkedin "
         />
       </div>
       <div

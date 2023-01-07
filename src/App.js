@@ -9,6 +9,12 @@ import Portal from "./utils/Portal";
 export const queryClient = new QueryClient();
 
 function App() {
+  window.oncontextmenu = function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  };
+
   const user = useSelector((state) => ({ ...state.user.userinfo }));
   const theme = useSelector((state) => state.user.theme);
 

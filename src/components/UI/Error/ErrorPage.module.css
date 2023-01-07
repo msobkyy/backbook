@@ -1,0 +1,12 @@
+.main {
+  height: calc(100vh - 100px);
+  width: 100%;
+  color: var(--color-primary);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 24px;
+}

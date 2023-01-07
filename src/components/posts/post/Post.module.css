@@ -80,6 +80,9 @@
   max-height: inherit;
   object-fit: cover;
 }
+.per1 {
+  max-height: 80vh;
+}
 
 .per2 {
   height: 100%;
@@ -331,6 +334,7 @@
 
 .react_user_wrap {
   position: relative;
+  display: flex;
 }
 .react_icon {
   position: absolute;
@@ -411,4 +415,8 @@
     width: 20px;
     height: 20px;
   }
+}
+
+:global(.dark) .menu i {
+  filter: invert(100%);
 }

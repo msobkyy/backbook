@@ -33,6 +33,7 @@
 }
 .input {
   width: 320px;
+  max-width: 80%;
 }
 .btns {
   align-self: flex-end;
@@ -133,6 +134,9 @@
 }
 
 @media (max-width: 550px) {
+  .input {
+    max-width: 90%;
+  }
   .s_content {
     flex-direction: column-reverse;
     align-items: center;

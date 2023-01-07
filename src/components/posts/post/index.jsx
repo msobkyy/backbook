@@ -82,7 +82,7 @@ function Post({ post }) {
     setDelayHandler(
       setTimeout(() => {
         setShowReact(false);
-      }, 900)
+      }, 800)
     );
   };
 
@@ -134,8 +134,8 @@ function Post({ post }) {
   };
 
   const reactHandler = (type) => {
+    handleMouseLeave();
     if (!isLoading) {
-      setShowReact(false);
       setReactions((prev) => {
         return {
           ...prev,
@@ -174,6 +174,12 @@ function Post({ post }) {
               className={classes.username}
             >
               {`${post.user.first_name} ${post.user.last_name}`}
+              {post?.user?.confirmed && (
+                <i
+                  style={{ marginLeft: "5px", transform: "translateY(2px)" }}
+                  className="confirmed_comment_icon"
+                />
+              )}
             </Link>
 
             {post.type === "profilePhoto" ? (
@@ -260,7 +266,7 @@ function Post({ post }) {
                   ? classes.per4
                   : imgNum === 5
                   ? classes.per5
-                  : ""
+                  : classes.per1
               }`}
             >
               {post.images.map((img, i) => (
@@ -372,7 +378,7 @@ function Post({ post }) {
               reactHandler(check ? check : "like");
             }}
             onTouchStart={handleMouseEnter}
-            onTouchEnd={handleMouseLeave}
+            // onTouchEnd={handleMouseLeave}
           >
             {check ? (
               <img
@@ -437,6 +443,7 @@ function Post({ post }) {
                   setShowMenu={setShowShare}
                   post={post}
                   postRef={postRef}
+                  setSharesCount={setSharesCount}
                 />
               )}
             </>

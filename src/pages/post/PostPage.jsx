@@ -1,14 +1,17 @@
-import React from "react";
-import Header from "../../components/header/Header";
+import React, { useEffect } from "react";
 import classes from "./style.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Post from "../../components/posts/post";
+import PostSkeleton from "../../components/skeleton/PostSkeleton";
+import { useNavigate } from "react-router-dom";
 
 function PostPage() {
-  const { username, post } = useParams();
-  const { isLoading, error, data, isFetching, isSuccess } = useQuery({
+  const navigate = useNavigate();
+
+  const { post } = useParams();
+  const { isLoading, isError, data, isFetching, isSuccess } = useQuery({
     queryKey: ["getPost", post],
     queryFn: async () => {
       const { data } = await axios.get(
@@ -21,10 +24,19 @@ function PostPage() {
     },
     refetchOnWindowFocus: false,
   });
+
+  const postsSkelton = isLoading || isFetching;
+
+  useEffect(() => {
+    if (isError) {
+      navigate("/404");
+    }
+  }, [isError]);
+
   return (
     <div className={classes.post}>
-      <Header />
       <div className={classes.container}>
+        {postsSkelton && <PostSkeleton />}
         {isSuccess && !isLoading && <Post post={data?.data.post} />}
       </div>
     </div>

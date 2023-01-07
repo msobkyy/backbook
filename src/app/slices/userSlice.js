@@ -27,6 +27,10 @@ export const userSlice = createSlice({
       state.userinfo.cover = action.payload;
       Cookies.set("user", JSON.stringify(state.userinfo));
     },
+    updateRecivedRequestsCount: (state, action) => {
+      state.userinfo.recivedRequestsCount = action.payload;
+      Cookies.set("user", JSON.stringify(state.userinfo));
+    },
     logout: (state, action) => {
       state.userinfo = null;
       Cookies.set("user", null);
@@ -43,6 +47,7 @@ export const {
   updateProfilePhoto,
   updateCoverPhoto,
   changeTheme,
+  updateRecivedRequestsCount,
 } = userSlice.actions;
 
 export default userSlice.reducer;

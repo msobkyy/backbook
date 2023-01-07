@@ -4,9 +4,7 @@ import { useRelationship } from "../../hooks/useRealationship";
 import classes from "./style.module.css";
 
 export default function FriendCard({ user, type, requestId, refetch }) {
-  const cancelSentRequestHandler = async (userId) => {};
-
-  const { mutate, data, isSuccess } = useRelationship(user.username);
+  const { mutate, data } = useRelationship(user.username);
 
   const acceptRequest = async (requestId) => {
     mutate({ id: requestId, type: "acceptRequest" });
@@ -18,7 +16,6 @@ export default function FriendCard({ user, type, requestId, refetch }) {
 
   useEffect(() => {
     if (data?.status === "success") {
-      console.log("success");
       refetch();
     }
   }, [data]);

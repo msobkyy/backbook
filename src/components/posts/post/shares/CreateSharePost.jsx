@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useCreatePost } from "../../../../hooks/useCreatePost";
 import isRTL from "../../../../utils/isRTL";
 import Portal from "../../../../utils/Portal";
@@ -7,11 +7,22 @@ import Card from "../../../UI/Card/Card";
 import classes from "./CreateSharePost.module.css";
 import SharedPost from "./SharedPost";
 import toast from "react-hot-toast";
+import useOnClickOutside from "../../../../hooks/useOnClickOutside";
 
-function CreateSharePost({ showSharePost, setShowSharePost, post }) {
+function CreateSharePost({
+  showSharePost,
+  setShowSharePost,
+  post,
+  setSharesCount,
+}) {
   const [description, setDescription] = useState("");
+  const createShareRef = useRef();
 
-  const { data, isLoading, isSuccess, error, mutate } = useCreatePost();
+  const { data, isLoading, isSuccess, mutate } = useCreatePost();
+
+  useOnClickOutside(createShareRef, showSharePost, () => {
+    setShowSharePost(false);
+  });
 
   const sharePostHandler = () => {
     let form = new FormData();
@@ -25,6 +36,7 @@ function CreateSharePost({ showSharePost, setShowSharePost, post }) {
     if (isSuccess && data?.data?.status === "success") {
       setTimeout(() => {
         setShowSharePost(false);
+        setSharesCount((perv) => perv + 1);
         toast.success("Successfully Shared!");
       }, 300);
     }
@@ -32,7 +44,7 @@ function CreateSharePost({ showSharePost, setShowSharePost, post }) {
   return (
     <Portal>
       <div className={`${classes.wrap} blur`}>
-        <Card className={classes.card}>
+        <Card className={classes.card} innerRef={createShareRef}>
           <div className={classes.header}>
             Share Post
             <div

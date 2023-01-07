@@ -1,3 +1,22 @@
+.confirmed_icon {
+  background-image: url(../../../public/icons/icons41.png);
+  background-position: -154px -132px;
+  background-size: 190px 204px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.confirmed_comment_icon {
+  background-image: url(../../../public/icons/icons41.png);
+  background-position: -176px -102px;
+  background-size: 190px 204px;
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
 .friends_requests_icon {
   background-image: url(../../../public/icons/icons11.png);
   background-position: 0px -117px;

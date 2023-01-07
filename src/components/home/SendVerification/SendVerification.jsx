@@ -31,11 +31,22 @@ function SendVerification() {
     retry: false,
   });
 
+  const resendEmail = () => {
+    refetch();
+  };
+
   if (data?.status === "success")
     return (
       <Card className={styles.done}>
         <p className="text_success">Email verification sent successfully</p>
-        <Lottie options={successOptions} height={25} width={25} />
+        <Lottie
+          style={{
+            transform: "translateY(2px)",
+          }}
+          options={successOptions}
+          height={20}
+          width={20}
+        />
       </Card>
     );
 
@@ -57,7 +68,9 @@ function SendVerification() {
         Your account is not verified, verify your account to avoid deleting Your
         acccount.
       </span>
-      <a onClick={() => refetch()}>Resend email verification</a>
+      <div className={styles.link} onClick={resendEmail}>
+        Resend email verification
+      </div>
       {error ? (
         <p className="text_error">{error.response?.data?.message}</p>
       ) : (

@@ -5,7 +5,6 @@ import styles from "./UserMenu.module.css";
 export default function DisplayAccessibility({ setVisible }) {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.user.theme);
-  console.log(theme);
   return (
     <div className={styles.absolute_wrap}>
       <div className={styles.absolute_wrap_header}>

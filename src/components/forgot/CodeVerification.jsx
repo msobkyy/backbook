@@ -22,14 +22,14 @@ function CodeVerification({ setVisible, setUserInfos, userInfos }) {
     code: Yup.string().required("Security code is required.").max(6).min(6),
   });
 
-  const submitHandler = async () => {
+  const submitHandler = async (values) => {
     try {
       setLoading(true);
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/resetPassword`,
         {
           email,
-          code,
+          code: values.code,
         },
         {
           withCredentials: true,
@@ -68,8 +68,8 @@ function CodeVerification({ setVisible, setUserInfos, userInfos }) {
           enableReinitialize
           initialValues={{ code }}
           validationSchema={forgotValidation}
-          onSubmit={() => {
-            submitHandler();
+          onSubmit={(values) => {
+            submitHandler(values);
           }}
         >
           {(formik) => (

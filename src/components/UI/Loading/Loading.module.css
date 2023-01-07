@@ -1,0 +1,9 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  color: var(--color-primary);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -113,28 +113,28 @@ export const left = [
 
 export const stories = [
   {
-    profile_picture: "../../stories/profile1.jpg",
+    profile_picture: "../../stories/profile1.webp",
     profile_name: "Elon Musk",
-    image: "../../stories/1.jpg",
+    image: "../../stories/1.webp",
   },
   {
-    profile_picture: "../../stories/profile2.jpg",
-    profile_name: "South park",
-    image: "../../stories/2.png",
+    profile_picture: "../../stories/profile2.webp",
+    profile_name: "Mark Zuckerberg",
+    image: "../../stories/2.webp",
   },
   {
-    profile_picture: "../../stories/profile3.png",
-    profile_name: "The Sopranos",
-    image: "../../stories/3.jpg",
+    profile_picture: "../../stories/profile3.webp",
+    profile_name: "Jeff Bezos",
+    image: "../../stories/3.webp",
   },
   {
-    profile_picture: "../../stories/profile4.jfif",
-    profile_name: "Football World",
-    image: "../../stories/4.jpg",
+    profile_picture: "../../stories/profile4.webp",
+    profile_name: "Bill Gates",
+    image: "../../stories/4.webp",
   },
   {
-    profile_picture: "../../stories/profile5.png",
-    profile_name: "The Witcher Wild Hunt",
-    image: "../../stories/5.jfif",
+    profile_picture: "../../stories/profile5.webp",
+    profile_name: "Steve Jobs",
+    image: "../../stories/5.webp",
   },
 ];

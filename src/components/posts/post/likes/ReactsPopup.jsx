@@ -46,9 +46,6 @@ export default function ReactsPopup({
       className={styles.popup}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onTouchStart={handleMouseEnter}
-      onTouchEnd={handleMouseLeave}
-      onClick={handleMouseLeave}
     >
       {reactsArray.map((react, i) => (
         <div

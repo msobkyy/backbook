@@ -36,7 +36,13 @@ function Friends({ userData, userFriends, photosSkelton }) {
                     style={{ backgroundImage: `url(${user.photo})` }}
                   ></div>
                   <span className={classes.friend_name}>
-                    {user.first_name} {user.last_name}
+                    {user.first_name} {user.last_name}{" "}
+                    {user?.confirmed && (
+                      <i
+                        style={{ marginLeft: "5px" }}
+                        className="confirmed_comment_icon"
+                      />
+                    )}
                   </span>
                 </Link>
               ))}

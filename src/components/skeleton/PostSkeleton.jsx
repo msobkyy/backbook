@@ -20,7 +20,7 @@ function PostSkeleton() {
             width={150}
             height={15}
             style={{
-              transform: "translateY(8px)",
+              transform: "translateY(4px)",
             }}
           />
           <Skeleton width={80} height={8} />

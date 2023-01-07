@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import ErrorPage from "../components/UI/Error/ErrorPage";
 import IsLoggedIn from "./IsLoggedIn";
 import NotLoggedIn from "./NotLoggedIn";
 import pagesData from "./pagesData";
@@ -18,9 +19,9 @@ const Router = () => {
 
   return (
     <Routes>
-      <Route element={<IsLoggedIn />}> {pageRoutesPriv}</Route>
+      <Route element={<IsLoggedIn />}>{pageRoutesPriv}</Route>
       <Route element={<NotLoggedIn />}> {pageRoutes}</Route>
-      <Route path="*" element={<p>Error 404 Not found</p>} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 };

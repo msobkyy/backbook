@@ -60,7 +60,15 @@ function Comment({ comment }) {
           <Link
             to={`/profile/${comment.user.username}`}
             className={classes.user}
-          >{`${comment.user.first_name} ${comment.user.last_name}`}</Link>
+          >
+            {`${comment.user.first_name} ${comment.user.last_name}`}
+            {comment.user?.confirmed && (
+              <i
+                style={{ marginLeft: "5px" }}
+                className="confirmed_comment_icon"
+              />
+            )}
+          </Link>
           <div className={classes.text}>{comment.text}</div>
           {comment.photo && (
             <div className={classes.img_info}>
@@ -96,7 +104,7 @@ function Comment({ comment }) {
           </Moment>
         </div>
         {/* Comment Replies */}
-        <div>
+        <div className={classes.replies_wrap}>
           {replies.slice(0, count).map((comment, i, { length }) => (
             <div className={classes.info_wrap} key={comment._id}>
               <div className={classes.left}>
@@ -107,7 +115,15 @@ function Comment({ comment }) {
                   <Link
                     to={`/profile/${comment.user.username}`}
                     className={classes.user}
-                  >{`${comment.user.first_name} ${comment.user.last_name}`}</Link>
+                  >
+                    {`${comment.user.first_name} ${comment.user.last_name}`}{" "}
+                    {comment.user?.confirmed && (
+                      <i
+                        style={{ marginLeft: "5px" }}
+                        className="confirmed_comment_icon"
+                      />
+                    )}
+                  </Link>
                   <div className={classes.text}>{comment.text}</div>
                   {comment.photo && (
                     <div className={classes.img_info}>

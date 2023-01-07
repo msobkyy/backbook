@@ -299,8 +299,13 @@
   }
 }
 
-:global(.dark) .btns img {
+:global(.dark) .btns img,
+:global(.dark) .open_cover_menu i {
   filter: invert(100%);
+}
+
+:global(.dark) .profile_menu_wrap .more svg {
+  fill: #fff;
 }
 
 .sk1 {

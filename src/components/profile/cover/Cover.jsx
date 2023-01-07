@@ -91,7 +91,7 @@ function Cover({ isVisitor, user, photosData }) {
     );
   };
 
-  const { data, isLoading, isSuccess, error, mutate } = useMutation({
+  const { data, isLoading, isSuccess, mutate } = useMutation({
     mutationFn: sendPost,
   });
 

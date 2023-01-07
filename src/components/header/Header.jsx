@@ -100,16 +100,35 @@ function Header() {
               : styles.middle_icon
           }
         >
-          <span className={styles.active_icon}>
+          <span
+            style={{ transform: "translateY(5px)" }}
+            className={styles.active_icon}
+          >
             <FriendsActive />
           </span>
-          <span className={styles.icon}>
+          <span
+            style={{ transform: "translateY(5px)" }}
+            className={styles.icon}
+          >
             <Friends />
           </span>
+          {user?.recivedRequestsCount > 0 && (
+            <div
+              style={{ transform: "translateY(3px)" }}
+              className={styles.notification}
+            >
+              {user?.recivedRequestsCount}
+            </div>
+          )}
         </NavLink>
         <Link to="/" className={`${styles.middle_icon} hover1`}>
-          <Watch color={color} />
-          <div className={styles.notification}>9+</div>
+          <Watch style={{ transform: "translateY(5px)" }} color={color} />
+          <div
+            style={{ transform: "translateY(3px)" }}
+            className={styles.notification}
+          >
+            9+
+          </div>
         </Link>
         <Link to="/" className={`${styles.middle_icon} hover1`}>
           <Market color={color} />

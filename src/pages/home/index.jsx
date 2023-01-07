@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Header from "../../components/header/Header";
 import HomeLeft from "../../components/home/left/HomeLeft";
 import { useSelector } from "react-redux";
 import HomeRight from "../../components/home/right/HomeRight";
@@ -18,23 +17,9 @@ import PostSkeleton from "../../components/skeleton/PostSkeleton";
 function Home() {
   const navigate = useNavigate();
   const { ref, inView } = useInView();
-
-  // const { isLoading, error, data, isSuccess } = useQuery({
-  //   queryKey: ["allPosts"],
-  //   queryFn: async () => {
-  //     const { data } = await axios.get(
-  //       `${process.env.REACT_APP_BACKEND_URL}/api/v1/posts/getAllPosts?sort=-createdAt&limit=20`,
-  //       {
-  //         withCredentials: true,
-  //       }
-  //     );
-  //     return data;
-  //   },
-  //   refetchOnWindowFocus: false,
-  // });
   const fetchPosts = async ({ pageParam = 1 }) => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/api/v1/posts/getAllPosts?sort=-createdAt&limit=15&page=${pageParam}`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/v1/posts/getAllPosts?sort=-createdAt&limit=10&page=${pageParam}`,
       {
         withCredentials: true,
       }
@@ -49,23 +34,21 @@ function Home() {
     data,
     isFetching,
     fetchNextPage,
-    fetchPreviousPage,
     hasNextPage,
-    hasPreviousPage,
     isFetchingNextPage,
-    isFetchingPreviousPage,
-    ...result
   } = useInfiniteQuery({
     queryKey: ["allPosts"],
     queryFn: fetchPosts,
     getNextPageParam: (lastPage, pages) => {
-      if (lastPage.length < 15) {
+      if (lastPage.length < 10) {
         return undefined;
       } else {
         return pages.length + 1;
       }
     },
     refetchOnWindowFocus: false,
+    retry: 3,
+    retryDelay: 2000,
   });
 
   const postsSkeleton = isFetching || isLoading;
@@ -89,7 +72,6 @@ function Home() {
 
   return (
     <div className={styles.home}>
-      <Header />
       <HomeLeft user={user} />
       <HomeRight user={user} />
       <div className={styles.home_middle}>

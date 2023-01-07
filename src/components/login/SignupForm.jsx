@@ -28,7 +28,6 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
     birth_Day: new Date().getDay(),
     gender: "",
   };
-  const [user, setUser] = useState(userInfos);
   const [genderError, setGenderError] = useState(true);
   const [dateError, setDateError] = useState("");
 
@@ -75,7 +74,7 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
       .required("Password is required")
       .min(6)
       .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})/,
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#_$%^&*])(?=.{6,})/,
         "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character"
       ),
     passwordConfirm: Yup.string().test(
@@ -120,15 +119,6 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
       setSuccess("");
       setError(error.response.data.message);
     }
-  };
-
-  const handleSignupChange = (e) => {
-    const { name, value } = e.target;
-
-    setUser((perv) => {
-      return { ...perv, [name]: value };
-    });
-    console.log(name, value);
   };
 
   useOnClickOutside(signUpRef, renderSignUp, () => {
@@ -192,7 +182,6 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
                       type="text"
                       placeholder="First name"
                       name="first_name"
-                      onChange={handleSignupChange}
                       disabled={loading}
                     />
 
@@ -201,7 +190,6 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
                       type="text"
                       placeholder="Last name"
                       name="last_name"
-                      onChange={handleSignupChange}
                       disabled={loading}
                     />
                   </div>
@@ -210,7 +198,6 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
                       type="email"
                       placeholder="Email address"
                       name="email"
-                      onChange={handleSignupChange}
                       disabled={loading}
                     />
                   </div>
@@ -219,7 +206,6 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
                       type="password"
                       placeholder="Password"
                       name="password"
-                      onChange={handleSignupChange}
                       disabled={loading}
                     />
                   </div>
@@ -228,7 +214,6 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
                       type="password"
                       placeholder="Password confirm"
                       name="passwordConfirm"
-                      onChange={handleSignupChange}
                       disabled={loading}
                     />
                   </div>
@@ -236,13 +221,11 @@ function SignupForm({ setRenderSignUp, renderSignUp }) {
                     birth_Day={birth_Day}
                     birth_Month={birth_Month}
                     birth_Year={birth_Year}
-                    handleSignupChange={handleSignupChange}
                     disabled={loading}
                     dateError={dateError}
                   />
 
                   <GenderSelector
-                    handleSignupChange={handleSignupChange}
                     disabled={loading}
                     genderError={genderError}
                   />

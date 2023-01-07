@@ -41,7 +41,6 @@ function Intro({ userData, isVisitor, showEdit, setShowEdit, profileSkelton }) {
     mutationKey: "updateDetails",
     mutationFn: sendPost,
     onSuccess: (data) => {
-      console.log(queryClient);
       queryClient.setQueryData(["getProfile", userData.username], (oldData) => {
         let newData = oldData;
 

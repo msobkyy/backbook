@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import Header from "../../components/header/Header";
 import classes from "./style.module.css";
 import { useParams } from "react-router-dom";
 import { useQuery, useInfiniteQuery } from "@tanstack/react-query";
@@ -20,9 +19,12 @@ import { useInView } from "react-intersection-observer";
 import CreatePost from "../../components/home/posts/CreatePost/CreatePost";
 import Skeleton from "react-loading-skeleton";
 import PostSkeleton from "../../components/skeleton/PostSkeleton";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const user = useSelector((state) => ({ ...state.user.userinfo }));
+  const navigate = useNavigate();
+
   const [showProfilePhoto, setShowProfilePhoto] = useState(false);
   const [detailsHeight, setDetailsHeight] = useState();
   const [showEdit, setShowEdit] = useState(false);
@@ -35,13 +37,9 @@ function Profile() {
   const { height } = useWindowDimensions();
   const { ref, inView } = useInView();
 
-  useEffect(() => {
-    setDetailsHeight(detailsRef.current?.clientHeight);
-  }, [detailsRef.current?.clientHeight]);
-
   const {
     isLoading: profileLoading,
-    error: profileError,
+    isError: profileError,
     data: profileData,
     isFetching: profileIsFetching,
     refetch: profileRefetch,
@@ -60,7 +58,7 @@ function Profile() {
   });
   const {
     isLoading: photosLoading,
-    error: photosError,
+    isError: photosError,
     data: photosData,
     isFetching: photosIsFetching,
     refetch: photosRefetch,
@@ -92,7 +90,7 @@ function Profile() {
     isLoading: postsLoading,
     isSuccess: postsIsSuccess,
     data: postsData,
-    error: postsError,
+    isError: postsError,
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
@@ -136,9 +134,18 @@ function Profile() {
     }
   }, [inView]);
 
+  useEffect(() => {
+    setDetailsHeight(detailsRef.current?.clientHeight);
+  }, [detailsRef.current?.clientHeight, profileData, photosData]);
+
+  useEffect(() => {
+    if (profileError || photosError || postsError) {
+      navigate("/404");
+    }
+  }, [profileError, photosError, postsError]);
+
   return (
     <div className={classes.profile}>
-      <Header />
       <div className={classes.top}>
         <div className={classes.wrapper}>
           <div className={classes.header}>
@@ -205,6 +212,12 @@ function Profile() {
                 ) : (
                   <h1 className={classes.name}>
                     {`${userData?.first_name} ${userData?.last_name}`}
+                    {userData?.confirmed && (
+                      <i
+                        style={{ marginLeft: "10px" }}
+                        className="confirmed_icon"
+                      />
+                    )}
                     {userData?.details?.otherName && (
                       <span>{`(${userData?.details?.otherName})`}</span>
                     )}

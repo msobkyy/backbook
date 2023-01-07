@@ -13,6 +13,7 @@
   font-size: smaller;
   align-items: center;
   justify-content: center;
+  gap: 6px;
 }
 .done div:nth-child(2) {
   margin: 0 !important;
@@ -27,6 +28,14 @@
   width: fit-content;
 }
 .ActiveAccount a:hover {
+  text-decoration: underline;
+}
+.link {
+  color: var(--blue-color);
+  cursor: pointer;
+  width: fit-content;
+}
+.link:hover {
   text-decoration: underline;
 }
 @media (max-width: 1175px) {

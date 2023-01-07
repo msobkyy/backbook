@@ -8,9 +8,15 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import toast from "react-hot-toast";
 import CreateSharePost from "./CreateSharePost";
 
-function ShareMenu({ showMenu, setShowMenu, post, user, postRef }) {
+function ShareMenu({
+  showMenu,
+  setShowMenu,
+  post,
+  user,
+  postRef,
+  setSharesCount,
+}) {
   const menuRef = useRef();
-  const isOwner = post.user._id === user._id;
 
   const [showSharePost, setShowSharePost] = useState(false);
 
@@ -60,6 +66,7 @@ function ShareMenu({ showMenu, setShowMenu, post, user, postRef }) {
           showSharePost={showSharePost}
           setShowSharePost={setShowSharePost}
           post={post}
+          setSharesCount={setSharesCount}
         />
       )}
     </Card>

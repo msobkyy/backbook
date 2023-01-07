@@ -130,6 +130,12 @@ function SharedPost({ post }) {
                 className={classes.username}
               >
                 {`${post.user.first_name} ${post.user.last_name}`}
+                {post.user?.confirmed && (
+                  <i
+                    style={{ marginLeft: "5px" }}
+                    className="confirmed_comment_icon"
+                  />
+                )}
               </Link>
 
               {post.type === "profilePhoto" ? (

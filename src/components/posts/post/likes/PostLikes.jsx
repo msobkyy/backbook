@@ -6,10 +6,11 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import useOnClickOutside from "../../../../hooks/useOnClickOutside";
+import Skeleton from "react-loading-skeleton";
 
 function PostLikes({ showLikes, setShowLikes, postID }) {
   const pRef = useRef();
-  const { isLoading, error, data, isFetching, isSuccess } = useQuery({
+  const { isLoading, data, isFetching } = useQuery({
     queryKey: ["getReacts", postID],
     queryFn: async () => {
       const { data } = await axios.get(
@@ -22,6 +23,7 @@ function PostLikes({ showLikes, setShowLikes, postID }) {
     },
     refetchOnWindowFocus: false,
   });
+  const likesSkelton = isLoading || isFetching;
 
   useOnClickOutside(pRef, showLikes, () => {
     setShowLikes(false);
@@ -32,7 +34,16 @@ function PostLikes({ showLikes, setShowLikes, postID }) {
         <Card className={classes.post_likes_card} innerRef={pRef}>
           <div className={classes.pheader}>
             <span>All</span>
-            {data?.data.stats.types &&
+            {likesSkelton && (
+              <Skeleton
+                circle
+                height={25}
+                width={25}
+                containerClassName="avatar-skeleton"
+              />
+            )}
+            {!likesSkelton &&
+              data?.data.stats.types &&
               Object.entries(data?.data.stats.types).map(([key, value]) => {
                 return (
                   <div key={key} className={classes.reacts_info_wrap}>
@@ -73,7 +84,47 @@ function PostLikes({ showLikes, setShowLikes, postID }) {
             </div>
           </div>
           <div className={classes.content}>
-            {data?.data.reacts &&
+            {likesSkelton && (
+              <>
+                <div
+                  className={`${classes.react_user} ${classes.react_user_wrap}`}
+                  style={{ marginTop: "10px" }}
+                >
+                  <Skeleton
+                    circle
+                    height={40}
+                    width={40}
+                    containerClassName="avatar-skeleton"
+                  />
+                  <Skeleton
+                    width={150}
+                    height={15}
+                    style={{
+                      transform: "translateY(4px)",
+                    }}
+                  />
+                </div>
+                <div
+                  className={`${classes.react_user} ${classes.react_user_wrap}`}
+                >
+                  <Skeleton
+                    circle
+                    height={40}
+                    width={40}
+                    containerClassName="avatar-skeleton"
+                  />
+                  <Skeleton
+                    width={150}
+                    height={15}
+                    style={{
+                      transform: "translateY(4px)",
+                    }}
+                  />
+                </div>
+              </>
+            )}
+            {!likesSkelton &&
+              data?.data.reacts &&
               data?.data.reacts.map((react, i) => (
                 <Link
                   to={`/profile/${react.user.username}`}
@@ -94,6 +145,15 @@ function PostLikes({ showLikes, setShowLikes, postID }) {
                   </div>
                   <span>
                     {react.user.first_name} {react.user.last_name}
+                    {react.user?.confirmed && (
+                      <i
+                        style={{
+                          marginLeft: "5px",
+                          transform: "translateY(2px)",
+                        }}
+                        className="confirmed_comment_icon"
+                      />
+                    )}
                   </span>
                 </Link>
               ))}

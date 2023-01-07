@@ -22,7 +22,13 @@ function ChangePassword({ setUserInfos, userInfos }) {
   };
 
   const changePasswordValid = Yup.object({
-    password: Yup.string().required("Password is required").min(6),
+    password: Yup.string()
+      .required("Password is required")
+      .min(6)
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})/,
+        "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character"
+      ),
     passwordConfirm: Yup.string().test(
       "passwords-match",
       "Password confirm must match password !",
@@ -32,7 +38,7 @@ function ChangePassword({ setUserInfos, userInfos }) {
     ),
   });
 
-  const submitHandler = async () => {
+  const submitHandler = async (values) => {
     try {
       setLoading(true);
       const { data } = await axios.patch(
@@ -40,8 +46,8 @@ function ChangePassword({ setUserInfos, userInfos }) {
         {
           email,
           token,
-          password,
-          passwordConfirm,
+          password: values.password,
+          passwordConfirm: values.passwordConfirm,
         },
         {
           withCredentials: true,
@@ -79,8 +85,8 @@ function ChangePassword({ setUserInfos, userInfos }) {
           enableReinitialize
           initialValues={{ password, passwordConfirm }}
           validationSchema={changePasswordValid}
-          onSubmit={() => {
-            submitHandler();
+          onSubmit={(values) => {
+            submitHandler(values);
           }}
         >
           {(formik) => (
