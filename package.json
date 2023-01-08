@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "Backbook",
+=======
+  "name": "backbook",
+>>>>>>> 568efe3 (use npm)
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -61,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

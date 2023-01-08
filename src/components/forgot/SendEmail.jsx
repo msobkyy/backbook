@@ -11,7 +11,7 @@ function SendEmail({ setVisible, userInfos }) {
   const submitHandler = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.post(
+      await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/forgotPassword`,
         {
           email: userInfos.email,

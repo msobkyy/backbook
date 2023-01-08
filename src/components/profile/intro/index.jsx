@@ -37,7 +37,7 @@ function Intro({ userData, isVisitor, showEdit, setShowEdit, profileSkelton }) {
     );
   };
 
-  const { data, isLoading, isSuccess, error, mutate } = useMutation({
+  const { data, isSuccess, mutate } = useMutation({
     mutationKey: "updateDetails",
     mutationFn: sendPost,
     onSuccess: (data) => {

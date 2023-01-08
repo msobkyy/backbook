@@ -5,7 +5,7 @@
   background: var(--bg-primary);
   padding: 5px;
   border-radius: 50px;
-  gap: 5px;
+  gap: 14px;
 }
 .react {
   display: flex;
@@ -13,14 +13,17 @@
   justify-content: center;
   background-color: white;
   border-radius: 100%;
+  transform: scale(0.98);
+  transition: transform 0.2s;
 }
-.react img:hover {
-  transform: scale(1.2);
+
+.react:hover {
+  transform: scale(1.2) translateY(-12px);
 }
 .react img {
   width: 42px;
   height: 42px;
   cursor: pointer;
 
-  transform: scale(1.09);
+  transform: scale(1.2);
 }

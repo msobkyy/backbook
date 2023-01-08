@@ -107,6 +107,7 @@ function EmojiPickerBackground({
           >
             <EmojiPicker
               width={300}
+              height={300}
               lazyLoadEmojis={true}
               onEmojiClick={handleEmoji}
               previewConfig={{ showPreview: false }}

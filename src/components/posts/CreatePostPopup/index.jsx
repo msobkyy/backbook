@@ -9,8 +9,6 @@ import ImagePreview from "./ImagePreview";
 import { useSelector, useDispatch } from "react-redux";
 import * as createPostSlice from "../../../app/slices/createPostSlice";
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
 import dataURItoBlob from "../../../utils/dataURItoBlob";
 import FormLoader from "../../FormLoader";
 import { postBackgrounds } from "../../../data/post";
@@ -19,7 +17,6 @@ import { useCreatePost } from "../../../hooks/useCreatePost";
 
 function CreatePostPopup({ user }) {
   const dispatch = useDispatch();
-  const queryClient = useQueryClient();
 
   const [picker, setPicker] = useState(false);
   const createPost = useSelector((state) => state.createPost);
