@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "Backbook",
-=======
   "name": "backbook",
->>>>>>> 568efe3 (use npm)
   "version": "0.1.0",
   "private": true,
   "dependencies": {
