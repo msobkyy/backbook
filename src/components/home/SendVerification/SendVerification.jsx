@@ -3,15 +3,9 @@ import Card from "../../UI/Card/Card";
 import styles from "./SendVerification.module.css";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import successAnimation from "../../UI/Lottie/success.json";
 import BarLoader from "react-spinners/BarLoader";
-
-const successOptions = {
-  loop: false,
-  autoplay: true,
-  animationData: successAnimation,
-};
 
 function SendVerification() {
   const enabled = false;
@@ -39,13 +33,16 @@ function SendVerification() {
     return (
       <Card className={styles.done}>
         <p className="text_success">Email verification sent successfully</p>
+
         <Lottie
           style={{
+            width: 20,
+            height: 20,
             transform: "translateY(2px)",
           }}
-          options={successOptions}
-          height={20}
-          width={20}
+          animationData={successAnimation}
+          play
+          loop={false}
         />
       </Card>
     );

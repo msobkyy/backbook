@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./ErrorPage.module.css";
 import e404Animation from "../../UI/Lottie/404.json";
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import { useNavigate } from "react-router-dom";
 
 const e404Options = {
@@ -18,9 +18,12 @@ function ErrorPage({ error }) {
       <Lottie
         style={{
           transform: "translateY(2px)",
+          width: 300,
+          height: 300,
         }}
-        options={e404Options}
-        height={200}
+        animationData={e404Animation}
+        loop
+        play
       />
       <p>Something Went Wrong</p>
       <div

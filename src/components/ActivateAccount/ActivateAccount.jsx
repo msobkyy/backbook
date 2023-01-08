@@ -5,7 +5,7 @@ import styles from "./ActivateAccount.module.css";
 import BarLoader from "react-spinners/BarLoader";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import errorAnimation from "../UI/Lottie/error.json";
 import successAnimation from "../UI/Lottie/success.json";
 import { useNavigate } from "react-router-dom";
@@ -44,17 +44,6 @@ function ActivateAccount({ token }) {
       navigate("/");
     }, 3500);
   }
-  const errorOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: errorAnimation,
-  };
-
-  const successOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: successAnimation,
-  };
 
   return (
     <Portal>
@@ -74,13 +63,29 @@ function ActivateAccount({ token }) {
             )}
             {error && (
               <div>
-                <Lottie options={errorOptions} height={80} width={100} />
+                <Lottie
+                  style={{
+                    width: 10,
+                    height: 80,
+                  }}
+                  animationData={errorAnimation}
+                  play
+                  loop={false}
+                />
                 <p className="text_error">{error.response?.data?.message}</p>
               </div>
             )}
             {data?.status === "success" && (
               <div>
-                <Lottie options={successOptions} height={80} width={100} />
+                <Lottie
+                  style={{
+                    width: 10,
+                    height: 80,
+                  }}
+                  animationData={successAnimation}
+                  play
+                  loop={false}
+                />
                 <p className="text_success">
                   Your account activated succesfully
                 </p>
