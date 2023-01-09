@@ -92,7 +92,7 @@ function Post({ post }) {
       {
         name: "offset",
         options: {
-          offset: [0, 10],
+          offset: [0, 5],
         },
       },
     ],
@@ -350,7 +350,7 @@ function Post({ post }) {
           </div>
         </div>
         <div className={classes.actions}>
-          {true && (
+          {showReact && (
             <Portal id="reactPopper">
               <div
                 ref={setPopperElement}
