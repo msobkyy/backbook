@@ -350,7 +350,7 @@ function Post({ post }) {
           </div>
         </div>
         <div className={classes.actions}>
-          {showReact && (
+          {true && (
             <Portal id="reactPopper">
               <div
                 ref={setPopperElement}

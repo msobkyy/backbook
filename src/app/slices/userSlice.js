@@ -23,15 +23,21 @@ export const userSlice = createSlice({
     },
     updateProfilePhoto: (state, action) => {
       state.userinfo.photo = action.payload;
-      Cookies.set("user", JSON.stringify(state.userinfo));
+      Cookies.set("user", JSON.stringify(state.userinfo), {
+        expires: 90,
+      });
     },
     updateCoverPhoto: (state, action) => {
       state.userinfo.cover = action.payload;
-      Cookies.set("user", JSON.stringify(state.userinfo));
+      Cookies.set("user", JSON.stringify(state.userinfo), {
+        expires: 90,
+      });
     },
     updateRecivedRequestsCount: (state, action) => {
       state.userinfo.recivedRequestsCount = action.payload;
-      Cookies.set("user", JSON.stringify(state.userinfo));
+      Cookies.set("user", JSON.stringify(state.userinfo), {
+        expires: 90,
+      });
     },
     logout: (state, action) => {
       state.userinfo = null;
