@@ -8,7 +8,7 @@ import Stories from "../../components/home/stories/Stories";
 import CreatePost from "../../components/home/posts/CreatePost/CreatePost";
 import ActivateAccount from "../../components/ActivateAccount/ActivateAccount";
 import SendVerification from "../../components/home/SendVerification/SendVerification";
-import { logout, updateRecivedRequestsCount } from "../app/slices/userSlice";
+import { logout, updateRecivedRequestsCount } from "../../app/slices/userSlice";
 
 import axios from "axios";
 import { useInfiniteQuery } from "@tanstack/react-query";
