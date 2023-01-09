@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import HomeLeft from "../../components/home/left/HomeLeft";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import HomeRight from "../../components/home/right/HomeRight";
 import styles from "./style.module.css";
 import Stories from "../../components/home/stories/Stories";
@@ -11,7 +11,7 @@ import SendVerification from "../../components/home/SendVerification/SendVerific
 import { logout, updateRecivedRequestsCount } from "../../app/slices/userSlice";
 
 import axios from "axios";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import Post from "../../components/posts/post";
 import { useInView } from "react-intersection-observer";
 import PostSkeleton from "../../components/skeleton/PostSkeleton";
