@@ -18,7 +18,7 @@ export const userSlice = createSlice({
     login: (state, action) => {
       state.userinfo = action.payload.data.user;
       Cookies.set("user", JSON.stringify(action.payload.data.user), {
-        expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+        expires: 9,
       });
     },
     updateProfilePhoto: (state, action) => {
