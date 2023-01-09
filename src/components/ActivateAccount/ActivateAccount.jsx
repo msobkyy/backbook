@@ -67,6 +67,7 @@ function ActivateAccount({ token }) {
                   style={{
                     width: 100,
                     height: 80,
+                    margin: "auto",
                   }}
                   animationData={errorAnimation}
                   play
@@ -81,6 +82,7 @@ function ActivateAccount({ token }) {
                   style={{
                     width: 100,
                     height: 80,
+                    margin: "auto",
                   }}
                   animationData={successAnimation}
                   play
