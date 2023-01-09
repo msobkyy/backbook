@@ -65,8 +65,9 @@ function ActivateAccount({ token }) {
               <div>
                 <Lottie
                   style={{
-                    width: 10,
+                    width: 100,
                     height: 80,
+                    margin: "auto",
                   }}
                   animationData={errorAnimation}
                   play
@@ -79,8 +80,9 @@ function ActivateAccount({ token }) {
               <div>
                 <Lottie
                   style={{
-                    width: 10,
+                    width: 100,
                     height: 80,
+                    margin: "auto",
                   }}
                   animationData={successAnimation}
                   play

@@ -26,7 +26,7 @@ function ChangePassword({ setUserInfos, userInfos }) {
       .required("Password is required")
       .min(6)
       .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{6,})/,
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#_$%^&*])(?=.{6,})/,
         "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character"
       ),
     passwordConfirm: Yup.string().test(
