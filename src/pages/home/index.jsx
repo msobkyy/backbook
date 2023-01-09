@@ -8,6 +8,8 @@ import Stories from "../../components/home/stories/Stories";
 import CreatePost from "../../components/home/posts/CreatePost/CreatePost";
 import ActivateAccount from "../../components/ActivateAccount/ActivateAccount";
 import SendVerification from "../../components/home/SendVerification/SendVerification";
+import { logout, updateRecivedRequestsCount } from "../app/slices/userSlice";
+
 import axios from "axios";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import Post from "../../components/posts/post";
@@ -69,6 +71,44 @@ function Home() {
   }, [inView]);
 
   const postsData = data || [];
+
+  const dispatch = useDispatch();
+
+  const {
+    refetch,
+    error: pingError,
+    data: pingdata,
+  } = useQuery({
+    queryKey: ["ping"],
+    queryFn: async () => {
+      const { data } = await axios.put(
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/ping`,
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+      return data;
+    },
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    enabled: false,
+    retry: false,
+    cacheTime: 0,
+  });
+
+  useEffect(() => {
+    refetch();
+  }, []);
+
+  useEffect(() => {
+    if (pingdata) {
+      dispatch(updateRecivedRequestsCount(data?.recivedRequestsCount));
+    }
+    if (pingError) {
+      dispatch(logout());
+    }
+  }, [data, error]);
 
   return (
     <div className={styles.home}>
