@@ -15,10 +15,38 @@ import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import Post from "../../components/posts/post";
 import { useInView } from "react-intersection-observer";
 import PostSkeleton from "../../components/skeleton/PostSkeleton";
+import "../../fcm.js";
+import { messaging } from "../../fcm";
+import { getToken } from "firebase/messaging";
+import { useAddFCM } from "../../hooks/useAddFCM";
 
 function Home() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state) => ({ ...state.user.userinfo }));
+  const fcm = useSelector((state) => state.user.fcm);
+  const { token } = useParams();
   const { ref, inView } = useInView();
+
+  const { mutate } = useAddFCM();
+
+  async function requestPermission() {
+    const permission = await Notification.requestPermission();
+    if (permission === "granted") {
+      const token = await getToken(messaging, {
+        vapidKey:
+          "BJSPwo1aXb5un4sORg-jEcznSFs7QmuIhoFTNT6Se8Zje-r69aH5xxJAlFqDM9Y5SA3QJ5-1xiGfYOkADCT4dZs",
+      });
+      if (fcm !== token) {
+        mutate({ fcm: token });
+      }
+    } else if (permission === "denied") {
+      alert(
+        "You denied for the notification access, please allow it to be able to recieve notifications"
+      );
+    }
+  }
+
   const fetchPosts = async ({ pageParam = 1 }) => {
     const { data } = await axios.get(
       `${process.env.REACT_APP_BACKEND_URL}/api/v1/posts/getAllPosts?sort=-createdAt&limit=10&page=${pageParam}`,
@@ -53,27 +81,6 @@ function Home() {
     retryDelay: 2000,
   });
 
-  const postsSkeleton = isFetching || isLoading;
-
-  const user = useSelector((state) => ({ ...state.user.userinfo }));
-  const { token } = useParams();
-
-  useEffect(() => {
-    if (token && user.verified) {
-      navigate("/");
-    }
-  }, [user]);
-
-  useEffect(() => {
-    if (inView) {
-      fetchNextPage();
-    }
-  }, [inView]);
-
-  const postsData = data || [];
-
-  const dispatch = useDispatch();
-
   const {
     refetch,
     error: pingError,
@@ -97,7 +104,24 @@ function Home() {
     cacheTime: 0,
   });
 
+  const postsSkeleton = isFetching || isLoading;
+
+  const postsData = data || [];
+
   useEffect(() => {
+    if (token && user.verified) {
+      navigate("/");
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (inView) {
+      fetchNextPage();
+    }
+  }, [inView]);
+
+  useEffect(() => {
+    requestPermission();
     refetch();
   }, []);
 

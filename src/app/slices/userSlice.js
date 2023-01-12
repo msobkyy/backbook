@@ -9,6 +9,7 @@ const initialValue = {
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light",
+  fcm: Cookies.get("fcm") ? JSON.parse(Cookies.get("fcm")) : null,
 };
 export const userSlice = createSlice({
   name: "user",
