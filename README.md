@@ -1,70 +1,113 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Backbook
 
-## Available Scripts
+This project is a clone of the popular social media platform, Facebook, built using the MERN stack (MongoDB, Express.js, React.js, and Node.js).
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://backbook.vercel.app
+## Features
 
-### `npm test`
+- ReactJS, NodeJS, ExpressJS, MongoDB.
+- Redux toolkit store to setup a global store.
+- Fully responsive design with all devices.
+- Strong authentication system, Register, login, reset password.
+- Cookies and JSON web tokens (JWT).
+- Email verification by sending mail to users using gmail smtp.
+- Search by email and send code to email to change the password.
+- Form validations using Formik, Yup, error massages.
+- Browser notification using firebase cloud messaging.
+- Ininite posts scroll.
+- Create posts : normal text, background, photos.
+- React system on posts : (like, love, wow, sad, angry).
+- Post Comments with text and upload photos and comment likes.
+- Comments replies.
+- Share posts with caption or without.
+- Delete posts.
+- Friendship system with send, cancel ,accept friend requests.
+- Following system with follow, unfollow another users.
+- Friends page to see the sent and recived friend requests.
+- Search functionality to another users.
+- Search history by date.
+- Upload profile picture, cover and ability to Crop, zoom the photo.
+- Photo Gallery with old photos to change pfp and cover.
+- Profile details and bio.
+- Light/dark mode toggle.
+- Skeleton loaders while page loads.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![1](https://user-images.githubusercontent.com/106025042/212144889-bb0c3c7d-9cc4-47d1-9e1e-eebc450260c7.jpg)
+![10](https://user-images.githubusercontent.com/106025042/212144999-8401717b-da64-4c78-ba13-840fb1b95208.jpg)
+![2](https://user-images.githubusercontent.com/106025042/212144922-bb1a4a51-f90e-40a3-8706-122dcaff0787.jpg)
+![3](https://user-images.githubusercontent.com/106025042/212144933-2e66373b-7b37-4637-a682-ceedfa5465e9.jpg)
+![4](https://user-images.githubusercontent.com/106025042/212144945-bc058a01-7053-4781-be9f-e7e99396e49e.jpg)
+![5](https://user-images.githubusercontent.com/106025042/212144951-0364c9d0-2a2f-489f-afed-b08279c4ba46.jpg)
+![6](https://user-images.githubusercontent.com/106025042/212144954-39fb37bb-adf8-4965-a0aa-5c0e0031de0a.jpg)
+![7](https://user-images.githubusercontent.com/106025042/212144971-a031039c-dc59-465a-9659-c10aeb8e8ce0.jpg)
+![8](https://user-images.githubusercontent.com/106025042/212144976-47ed76c2-1d39-4aeb-a15b-b09f8da544b4.jpg)
+![9](https://user-images.githubusercontent.com/106025042/212144988-5c55041a-9fbd-41df-a2f4-96cc9d45168c.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone the repository
 
-### `yarn eject`
+```bash
+git clone https://github.com/msobkyy/backbook.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Install the dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Start the server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+To deploy this project run
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm run build
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/msobkyy/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/vsobky)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Environment Variables
 
-### Advanced Configuration
+To run this project, you will need to add the following environment variables to your .env file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`REACT_APP_BACKEND_URL=`
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [@msobkyy](https://www.github.com/msobkyy)
+
+
+## 🚀 About Me
+I'm a MERN Stack Developer
+
+
+
+## Tech Stack
+
+**Client:** React, Redux
+
+**Server:** Node, Express, mongoose
+
