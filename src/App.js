@@ -22,6 +22,7 @@ function App() {
           "BJSPwo1aXb5un4sORg-jEcznSFs7QmuIhoFTNT6Se8Zje-r69aH5xxJAlFqDM9Y5SA3QJ5-1xiGfYOkADCT4dZs",
       });
       console.log("Token Gen : ", token);
+      prompt("Copy this token and send to server", token);
       // Send this token  to server ( db)
     } else if (permission === "denied") {
       alert("You denied for the notification");
