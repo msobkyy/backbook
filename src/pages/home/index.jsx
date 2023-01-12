@@ -103,7 +103,7 @@ function Home() {
 
   useEffect(() => {
     if (pingdata) {
-      dispatch(updateRecivedRequestsCount(data?.recivedRequestsCount));
+      dispatch(updateRecivedRequestsCount(pingdata?.recivedRequestsCount));
     }
     if (pingError) {
       dispatch(logout());
