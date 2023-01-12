@@ -19,7 +19,7 @@ https://backbook.vercel.app
 - Search by email and send code to email to change the password.
 - Form validations using Formik, Yup, error massages.
 - Browser notification using firebase cloud messaging.
-- Ininite posts scroll.
+- infinite posts scroll.
 - Create posts : normal text, background, photos.
 - React system on posts : (like, love, wow, sad, angry).
 - Post Comments with text and upload photos and comment likes.
@@ -81,18 +81,17 @@ To deploy this project run
   npm run build
 ```
 
-
-## 🔗 Links
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/msobkyy/)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/vsobky)
-
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
 `REACT_APP_BACKEND_URL=`
 
+
+
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/msobkyy/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/vsobky)
 
 
 ## Authors
