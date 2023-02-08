@@ -39,7 +39,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       {createPost.isOpen && <CreatePostPopup user={user} />}
       <Portal>
-        <Toaster position="bottom-left" reverseOrder={true} />
+        <Toaster position="bottom-left" reverseOrder={false} />
       </Portal>
       <Router />
     </QueryClientProvider>

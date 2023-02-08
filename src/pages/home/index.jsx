@@ -8,7 +8,7 @@ import Stories from "../../components/home/stories/Stories";
 import CreatePost from "../../components/home/posts/CreatePost/CreatePost";
 import ActivateAccount from "../../components/ActivateAccount/ActivateAccount";
 import SendVerification from "../../components/home/SendVerification/SendVerification";
-import { logout, updateRecivedRequestsCount } from "../../app/slices/userSlice";
+import { logout, updateNStats } from "../../app/slices/userSlice";
 
 import axios from "axios";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
@@ -79,6 +79,8 @@ function Home() {
     refetchOnWindowFocus: false,
     retry: 3,
     retryDelay: 2000,
+    refetchOnMount: false,
+    staleTime: Infinity,
   });
 
   const {
@@ -127,7 +129,13 @@ function Home() {
 
   useEffect(() => {
     if (pingdata) {
-      dispatch(updateRecivedRequestsCount(pingdata?.recivedRequestsCount));
+      dispatch(
+        updateNStats({
+          recivedRequestsCount: pingdata?.recivedRequestsCount,
+          unseenMessages: pingdata?.unseenMessages,
+          unseenNotification: pingdata?.unseenNotification,
+        })
+      );
     }
     if (pingError) {
       dispatch(logout());
@@ -171,14 +179,14 @@ function Home() {
           style={{ marginBottom: "20px" }}
         >
           {isFetchingNextPage ? (
-            <>
+            <div className={styles.posts}>
               <PostSkeleton />
               <PostSkeleton />
-            </>
+            </div>
           ) : hasNextPage ? (
-            "Load Newer"
+            "Loading Newer"
           ) : (
-            ".."
+            "You have reached the end"
           )}
         </div>
       </div>

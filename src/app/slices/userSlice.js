@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 import Cookies from "js-cookie";
 
 const initialValue = {
@@ -21,29 +22,68 @@ export const userSlice = createSlice({
       Cookies.set("user", JSON.stringify(action.payload.data.user), {
         expires: 90,
       });
+      Cookies.set("token", JSON.stringify(action.payload.data.token), {
+        expires: 90,
+      });
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${action.payload.data.token}`;
     },
+
     updateProfilePhoto: (state, action) => {
       state.userinfo.photo = action.payload;
       Cookies.set("user", JSON.stringify(state.userinfo), {
         expires: 90,
       });
     },
+
     updateCoverPhoto: (state, action) => {
       state.userinfo.cover = action.payload;
       Cookies.set("user", JSON.stringify(state.userinfo), {
         expires: 90,
       });
     },
-    updateRecivedRequestsCount: (state, action) => {
-      state.userinfo.recivedRequestsCount = action.payload;
+
+    updateNStats: (state, action) => {
+      state.userinfo.recivedRequestsCount =
+        action.payload.recivedRequestsCount >= 0
+          ? action.payload.recivedRequestsCount
+          : state.userinfo.recivedRequestsCount;
+
+      state.userinfo.unseenMessages =
+        action.payload.unseenMessages >= 0
+          ? action.payload.unseenMessages
+          : state.userinfo.unseenMessages;
+
+      state.userinfo.unseenNotification =
+        action.payload.unseenNotification >= 0
+          ? action.payload.unseenNotification
+          : state.userinfo.unseenNotification;
+
       Cookies.set("user", JSON.stringify(state.userinfo), {
         expires: 90,
       });
     },
+
+    reciveNoti: (state, action) => {
+      if (action.payload?.type === "notification") {
+        state.userinfo.unseenNotification =
+          state.userinfo.unseenNotification + 1;
+      } else if (action?.payload.type === "message") {
+        state.userinfo.unseenMessages = state.userinfo.unseenMessages + 1;
+      }
+
+      Cookies.set("user", JSON.stringify(state.userinfo), {
+        expires: 90,
+      });
+    },
+
     logout: (state, action) => {
       state.userinfo = null;
       Cookies.set("user", null);
+      Cookies.set("token", null);
     },
+
     changeTheme: (state, action) => {
       state.theme = action.payload;
       Cookies.set("theme", JSON.stringify(action.payload));
@@ -56,7 +96,8 @@ export const {
   updateProfilePhoto,
   updateCoverPhoto,
   changeTheme,
-  updateRecivedRequestsCount,
+  updateNStats,
+  reciveNoti,
 } = userSlice.actions;
 
 export default userSlice.reducer;

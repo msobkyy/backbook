@@ -792,3 +792,12 @@
   background-repeat: no-repeat;
   display: inline-block;
 }
+.create_icon {
+  background-image: url(../../../public/icons/icons39.png);
+  background-position: 0px -504px;
+  background-size: 26px 1446px;
+  width: 26px;
+  height: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}

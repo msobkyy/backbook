@@ -101,7 +101,7 @@ function SearchMenu({ color, showSearchMenu, setShowSearchMenu }) {
           <input
             className={classes.input}
             type="text"
-            placeholder="Search Facebook"
+            placeholder="Search Backbook"
             ref={input}
             onChange={(e) => setDebouncedTerm(e.target.value)}
             value={debouncedTerm}

@@ -21,6 +21,12 @@ import Public from "./public";
 import NewRoom from "./newRoom";
 import Home from "./home";
 import FriendsActive from "./friendsActive";
+import Info from "./info";
+import Like from "./like";
+import Smile from "./smile";
+import Send from "./send";
+import UnSeen from "./unseen";
+import Phone from "./phone";
 
 export {
   Logo,
@@ -46,4 +52,10 @@ export {
   NewRoom,
   Home,
   FriendsActive,
+  Info,
+  Like,
+  Smile,
+  Send,
+  UnSeen,
+  Phone,
 };

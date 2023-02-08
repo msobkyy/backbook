@@ -18,16 +18,11 @@ const initialloginInfos = {
 
 function LoginForm({ setRenderSignUp }) {
   const dispatch = useDispatch();
-  // const [loginInfo, setLoginInfo] = useState(initialloginInfos);
+
   const { email, password } = initialloginInfos;
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // const handleLoginChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setLoginInfo({ ...loginInfo, [name]: value });
-  // };
 
   const loginValidation = Yup.object({
     email: Yup.string()
@@ -88,14 +83,12 @@ function LoginForm({ setRenderSignUp }) {
                     type="email"
                     name="email"
                     placeholder="Email address"
-                    // onChange={handleLoginChange}
                     disabled={loading}
                   />
                   <LoginInput
                     type="password"
                     name="password"
                     placeholder="Password"
-                    // onChange={handleLoginChange}
                     disabled={loading}
                   />
                 </FormLoader>
@@ -106,6 +99,20 @@ function LoginForm({ setRenderSignUp }) {
                 )}
                 <button type="submit" className="btn_blue" disabled={loading}>
                   Log in
+                </button>
+                <button
+                  style={{ width: "100%", marginTop: "10px" }}
+                  className="gray_btn"
+                  type="button"
+                  disabled={loading}
+                  onClick={() => {
+                    submitHandler({
+                      email: "guest@backbook.io",
+                      password: "V0j^Lok?DYdv63rzSQxL6IK?mG2vX]v",
+                    });
+                  }}
+                >
+                  Login With Guest Account
                 </button>
               </Form>
             )}

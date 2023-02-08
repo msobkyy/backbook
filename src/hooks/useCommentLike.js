@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { socket } from "../routes/IsLoggedIn";
 
 const AddCommentLike = async ({ comment }) => {
   const { data } = await axios.put(
@@ -16,5 +17,11 @@ export const useCommentLike = (comment) => {
   return useMutation({
     mutationKey: ["useCommentLike", comment],
     mutationFn: AddCommentLike,
+    onSuccess: (data) => {
+      const newNotification = data?.data?.newNotification;
+      if (newNotification) {
+        socket.emit("notification", { notification: newNotification });
+      }
+    },
   });
 };

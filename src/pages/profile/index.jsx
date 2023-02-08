@@ -28,53 +28,34 @@ function Profile() {
   const [showProfilePhoto, setShowProfilePhoto] = useState(false);
   const [detailsHeight, setDetailsHeight] = useState();
   const [showEdit, setShowEdit] = useState(false);
-
   const { username } = useParams();
   const pRef = useRef(null);
   const detailsRef = useRef(null);
-  const usernameID = username ? username : user.username;
-  const isVisitor = !(usernameID === user.username);
   const { height } = useWindowDimensions();
   const { ref, inView } = useInView();
 
-  const {
-    isLoading: profileLoading,
-    isError: profileError,
-    data: profileData,
-    isFetching: profileIsFetching,
-    refetch: profileRefetch,
-  } = useQuery({
-    queryKey: ["getProfile", usernameID],
-    queryFn: async () => {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/getProfile/${usernameID}?sort=-createdAt&limit=10`,
-        {
-          withCredentials: true,
-        }
-      );
-      return data;
-    },
-    refetchOnWindowFocus: false,
-  });
-  const {
-    isLoading: photosLoading,
-    isError: photosError,
-    data: photosData,
-    isFetching: photosIsFetching,
-    refetch: photosRefetch,
-  } = useQuery({
-    queryKey: ["getPhotos", usernameID],
-    queryFn: async () => {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/getProfile/${usernameID}/photos`,
-        {
-          withCredentials: true,
-        }
-      );
-      return data;
-    },
-    refetchOnWindowFocus: false,
-  });
+  const usernameID = username ? username : user.username;
+  const isVisitor = !(usernameID === user.username);
+
+  const fetchProfile = async () => {
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/getProfile/${usernameID}?sort=-createdAt&limit=10`,
+      {
+        withCredentials: true,
+      }
+    );
+    return data;
+  };
+
+  const fetchPhotos = async () => {
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/api/v1/users/getProfile/${usernameID}/photos`,
+      {
+        withCredentials: true,
+      }
+    );
+    return data;
+  };
 
   const fetchPosts = async ({ pageParam = 1 }) => {
     const { data } = await axios.get(
@@ -85,6 +66,31 @@ function Profile() {
     );
     return data;
   };
+  const {
+    isLoading: profileLoading,
+    isError: profileError,
+    data: profileData,
+    isFetching: profileIsFetching,
+  } = useQuery({
+    queryKey: ["getProfile", usernameID],
+    queryFn: fetchProfile,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    staleTime: Infinity,
+  });
+
+  const {
+    isLoading: photosLoading,
+    isError: photosError,
+    data: photosData,
+    isFetching: photosIsFetching,
+  } = useQuery({
+    queryKey: ["getPhotos", usernameID],
+    queryFn: fetchPhotos,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    staleTime: Infinity,
+  });
 
   const {
     isLoading: postsLoading,
@@ -106,6 +112,8 @@ function Profile() {
       }
     },
     refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    staleTime: Infinity,
   });
   const userData = profileData?.data?.user;
   const userFriends = profileData?.data?.friends;
@@ -116,8 +124,7 @@ function Profile() {
   const postsSkelton = postsLoading || postsIsFetching;
 
   useEffect(() => {
-    profileRefetch();
-    photosRefetch();
+    window.scrollTo(0, 0);
   }, [usernameID]);
 
   useEffect(() => {
@@ -245,7 +252,7 @@ function Profile() {
                         alt=""
                         className="invert"
                       />
-                      <span>Add to story</span>
+                      <span style={{ color: "#fff" }}>Add to story</span>
                     </button>
                     <button
                       className="gray_btn"

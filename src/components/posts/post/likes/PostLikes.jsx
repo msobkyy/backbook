@@ -83,7 +83,7 @@ function PostLikes({ showLikes, setShowLikes, postID }) {
               ></i>
             </div>
           </div>
-          <div className={classes.content}>
+          <div className={classes.likes_content}>
             {likesSkelton && (
               <>
                 <div

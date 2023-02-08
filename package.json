@@ -35,6 +35,7 @@
     "react-simple-image-viewer": "^1.2.2",
     "react-spinners": "^0.13.7",
     "redux": "^4.2.0",
+    "socket.io-client": "^4.5.4",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.0",
     "yup": "^0.32.11"

@@ -361,6 +361,10 @@
 .share_content {
   max-width: 90%;
 }
+.likes_content {
+  max-height: 500px;
+  overflow: auto;
+}
 
 @media (max-width: 1175px) {
   .post {

@@ -1,0 +1,80 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 97%;
+  max-width: 450px;
+  padding: 0 !important;
+  margin: 0 6px;
+  box-shadow: 0 6px 28px 0 var(--shadow-2), 0 2px 4px 0 var(--shadow-1),
+    inset 0 0 0 1px var(--shadow-inset) !important;
+  border: none;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid var(--divider);
+  position: relative;
+}
+.header span {
+  font-size: 18px;
+  font-weight: 700;
+}
+.exit {
+  position: absolute;
+  right: 5px;
+}
+.content {
+  padding: 15px;
+}
+.themes {
+  display: flex;
+  flex-wrap: wrap;
+}
+.theme {
+  position: relative;
+  flex-basis: calc(16.666666666% - 10px);
+  box-sizing: border-box;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 5px;
+}
+.theme::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.theme_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.theme_con {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background: red;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btns button {
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+}

@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.rotate360 {
+  transform: rotate(180deg);
+}
+.content {
+  padding: 5px;
+  max-height: 320px;
+  overflow: auto;
+}
+
+:global(.dark) .icon svg {
+  fill: rgb(144, 144, 144);
+}

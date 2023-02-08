@@ -100,7 +100,7 @@
   height: fit-content;
   border-radius: 10px;
   background: var(--bg-primary);
-  box-shadow: 2px 2px 2px var(--shadow-1);
+  box-shadow: -3px 3px 7px var(--shadow-1);
   user-select: none;
   padding: 10px;
 }

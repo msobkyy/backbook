@@ -150,7 +150,7 @@ function Friendship({ friendship: friendshipData, userID, usernameID }) {
       ) : (
         <button className="btn_blue" onClick={() => followHandler()}>
           <img src="../../../icons/follow.png" className="invert" alt="" />
-          <span>Follow</span>
+          <span style={{ color: "#fff" }}>Follow</span>
         </button>
       )}
       {/* <button className={friendship?.friends ? "btn_blue" : "gray_btn"}>

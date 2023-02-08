@@ -1,18 +1,12 @@
 import React from "react";
 
-// import Login from "../pages/login";
-// import Home from "../pages/home";
-// import Forgot from "../pages/forgot";
-// import Profile from "../pages/profile";
-// import PostPage from "../pages/post/PostPage";
-// import FriendsPage from "../pages/friends";
-
 const Home = React.lazy(() => import("../pages/home"));
 const Login = React.lazy(() => import("../pages/login"));
 const Forgot = React.lazy(() => import("../pages/forgot"));
 const Profile = React.lazy(() => import("../pages/profile"));
 const FriendsPage = React.lazy(() => import("../pages/friends"));
 const PostPage = React.lazy(() => import("../pages/post/PostPage"));
+const Messages = React.lazy(() => import("../pages/messages"));
 
 const pagesData = [
   {
@@ -31,6 +25,18 @@ const pagesData = [
     path: "/profile",
     element: <Profile />,
     title: "profile",
+    priv: true,
+  },
+  {
+    path: "/messages",
+    element: <Messages />,
+    title: "messages",
+    priv: true,
+  },
+  {
+    path: "/messages/:chatId",
+    element: <Messages />,
+    title: "messages",
     priv: true,
   },
   {

@@ -66,7 +66,7 @@ function ChangePassword({ setUserInfos, userInfos }) {
 
   return (
     <Card className={styles.wrap}>
-      <div className={styles.header}>Find Your Account</div>
+      <div className={styles.header}>Change Your Password</div>
       {error ? (
         <div className={styles.error}>
           <div className={styles.error_header}>Something went wrong</div>
@@ -78,8 +78,7 @@ function ChangePassword({ setUserInfos, userInfos }) {
 
       <div className={styles.content}>
         <span className={styles.text}>
-          Please enter your email address or mobile number to search for your
-          account.
+          Please crate a new password for your account
         </span>
         <Formik
           enableReinitialize

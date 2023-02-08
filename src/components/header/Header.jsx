@@ -22,6 +22,7 @@ import SearchMenu from "./SearchMenu";
 import AllMenu from "./AllMenu";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import UserMenu from "./userMenu/index";
+import NotificationMenu from "./notificationMenu/NotificationMenu";
 function Header() {
   const color = "#65676b";
   const input = useRef();
@@ -29,8 +30,10 @@ function Header() {
   const [showSearchMenu, setShowSearchMenu] = useState(false);
   const [showAllMenu, setShowAllMenu] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showNotificationMenu, setShowNotificationMenu] = useState(false);
   const allmenu = useRef(null);
   const usermenu = useRef(null);
+  const notificationmenu = useRef(null);
   const location = useLocation();
 
   useOnClickOutside(allmenu, showAllMenu, () => {
@@ -39,6 +42,10 @@ function Header() {
 
   useOnClickOutside(usermenu, showUserMenu, () => {
     setShowUserMenu(false);
+  });
+
+  useOnClickOutside(notificationmenu, showNotificationMenu, () => {
+    setShowNotificationMenu(false);
   });
 
   const user = useSelector((state) => ({ ...state.user.userinfo }));
@@ -167,12 +174,60 @@ function Header() {
 
           {showAllMenu && <AllMenu />}
         </div>
-        <div className={styles.circle_icon}>
-          <Messenger />
+        <NavLink
+          to="/messages"
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.active_header} ${styles.circle_icon}`
+              : styles.circle_icon
+          }
+        >
+          <Messenger className={styles.icon} />
+          {user?.unseenMessages > 0 && (
+            <div
+              style={{
+                transform: "translateY(3px)",
+                right: "0px",
+                top: "-5px",
+              }}
+              className={styles.notification}
+            >
+              {user?.unseenMessages}
+            </div>
+          )}
+        </NavLink>
+        <div ref={notificationmenu}>
+          <div
+            className={`${styles.circle_icon}  ${
+              showNotificationMenu && styles.active_header
+            }`}
+            onClick={() => {
+              setShowNotificationMenu((prev) => !prev);
+            }}
+          >
+            <Notifications />
+            {user?.unseenNotification > 0 && (
+              <div
+                style={{
+                  transform: "translateY(3px)",
+                  right: "0px",
+                  top: "-5px",
+                }}
+                className={styles.notification}
+              >
+                {user?.unseenNotification}
+              </div>
+            )}
+          </div>
+
+          {showNotificationMenu && (
+            <NotificationMenu
+              setShowNotificationMenu={setShowNotificationMenu}
+              user={user}
+            />
+          )}
         </div>
-        <div className={styles.circle_icon}>
-          <Notifications />
-        </div>
+
         <div ref={usermenu}>
           <div
             className={`${styles.circle_icon}  ${

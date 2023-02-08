@@ -26,6 +26,8 @@ a {
 }
 
 :root {
+  --app-height: 100vh;
+
   --bg-primary: #fff;
   --bg-secondary: #f0f2f5;
   --bg-third: #e4e6eb;
@@ -71,6 +73,10 @@ a {
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }
 .invert {
+  filter: invert(1);
+}
+
+.dark .invert1 {
   filter: invert(1);
 }
 .reactEasyCrop_CropArea {
@@ -156,6 +162,7 @@ a {
   background: rgba(255, 255, 255, 0.768);
   bottom: 0;
   z-index: 99;
+  backdrop-filter: blur(2px);
 }
 
 /*----Buttons----*/
