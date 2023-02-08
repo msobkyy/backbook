@@ -1,10 +1,14 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "../../components/UI/Card/Card";
+import { useGetChat } from "../../hooks/useGetChat";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import { useRelationship } from "../../hooks/useRealationship";
 import classes from "./style.module.css";
 
 function Friendship({ friendship: friendshipData, userID, usernameID }) {
+  let navigate = useNavigate();
+
   const [friendship, setFriendship] = useState(friendshipData);
   const [friendsMenu, setFriendsMenu] = useState(false);
   const [respondMenu, setRespondMenu] = useState(false);
@@ -20,6 +24,12 @@ function Friendship({ friendship: friendshipData, userID, usernameID }) {
   });
 
   const { mutate, data, isSuccess } = useRelationship(usernameID);
+
+  const {
+    mutate: getChat,
+    data: chatData,
+    isSuccess: isGetChatSuccess,
+  } = useGetChat();
 
   const addFriendHandler = () => {
     mutate({ id: userID, type: "add" });
@@ -45,6 +55,10 @@ function Friendship({ friendship: friendshipData, userID, usernameID }) {
     mutate({ id: friendship.requestID, type: "cancel" });
   };
 
+  const getChatHandler = () => {
+    getChat({ user: userID });
+  };
+
   useEffect(() => {
     if (isSuccess) {
       setFriendship(data.data.friendship);
@@ -54,6 +68,12 @@ function Friendship({ friendship: friendshipData, userID, usernameID }) {
   useEffect(() => {
     setFriendship(friendshipData);
   }, [friendshipData]);
+
+  useEffect(() => {
+    if (chatData?.status === "success") {
+      navigate(`/messages/${chatData.data.chat._id}`);
+    }
+  }, [isGetChatSuccess]);
 
   return (
     <div className={classes.btns}>
@@ -153,14 +173,17 @@ function Friendship({ friendship: friendshipData, userID, usernameID }) {
           <span style={{ color: "#fff" }}>Follow</span>
         </button>
       )}
-      {/* <button className={friendship?.friends ? "btn_blue" : "gray_btn"}>
+      <button
+        className={friendship?.friends ? "btn_blue" : "gray_btn"}
+        onClick={() => getChatHandler()}
+      >
         <img
           src="../../../icons/message.png"
           className={friendship?.friends && "invert"}
           alt=""
         />
         <span>Message</span>
-      </button> */}
+      </button>
     </div>
   );
 }
