@@ -26,7 +26,10 @@ export const useAddMember = (chat) => {
       queryClient.setQueryData(["getMessages", chat._id], (oldData) => {
         if (!oldData) return oldData;
         let newData = oldData;
-        newData.data.chat.users = [user, ...newData.data.chat.users];
+        newData.pages[0].data.chat.users = [
+          user,
+          ...newData.pages[0].data.chat.users,
+        ];
 
         return {
           ...oldData,

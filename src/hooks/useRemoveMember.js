@@ -27,9 +27,8 @@ export const useRemoveMember = (chat) => {
       queryClient.setQueryData(["getMessages", chat._id], (oldData) => {
         if (!oldData) return oldData;
         let newData = oldData;
-        newData.data.chat.users = newData.data.chat.users.filter(
-          (m) => m._id !== userId
-        );
+        newData.pages[0].data.chat.users =
+          newData.pages[0].data.chat.users.filter((m) => m._id !== userId);
 
         return {
           ...oldData,
