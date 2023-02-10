@@ -10,7 +10,7 @@ https://backbook.vercel.app
 https://github.com/msobkyy/backbook-server
 
 ## Api Documentation
-[Documentation](https://documenter.getpostman.com/view/17180740/2s8Z73yrAk#5c4e7d92-f38c-42c0-b781-ac753591f527) 
+[Documentation](https://documenter.getpostman.com/view/17180740/2s8Z73yrAk) 
 
 ## Features
 
