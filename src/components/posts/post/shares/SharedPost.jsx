@@ -38,29 +38,29 @@ function SharedPost({ post }) {
   return (
     <Card className={classes.post} innerRef={postRef} style={{ width: "100%" }}>
       <div className={classes.body}>
-        {post.type === "background" && (
+        {post?.type === "background" && (
           <div
             className={classes.background}
             style={{
-              backgroundImage: `url(${postBackgrounds[post.background - 1]})`,
+              backgroundImage: `url(${postBackgrounds[post?.background - 1]})`,
               marginTop: 0,
             }}
           >
-            {post.text}
+            {post?.text}
           </div>
         )}
-        {post.type === "normal" && (
+        {post?.type === "normal" && (
           <div
             className={classes.normal}
             style={{
-              fontSize: `${post.text.length > 75 ? "15px" : ""}`,
-              direction: `${isRTL(post.text) ? "rtl" : "ltr"}`,
+              fontSize: `${post?.text.length > 75 ? "15px" : ""}`,
+              direction: `${isRTL(post?.text) ? "rtl" : "ltr"}`,
             }}
           >
-            {post.text}
+            {post?.text}
           </div>
         )}
-        {post.type === "image" && (
+        {post?.type === "image" && (
           <>
             <div
               className={`${classes.images_wrap} ${
@@ -76,7 +76,7 @@ function SharedPost({ post }) {
               }`}
               style={{ marginTop: 0 }}
             >
-              {post.images.map((img, i) => (
+              {post?.images.map((img, i) => (
                 <img
                   onClick={() => openImageViewer(i)}
                   src={img}
@@ -87,7 +87,7 @@ function SharedPost({ post }) {
             </div>
           </>
         )}
-        {post.type === "profilePhoto" && (
+        {post?.type === "profilePhoto" && (
           <>
             <div
               className={`${classes.profilePhoto_wrap} `}
@@ -99,20 +99,20 @@ function SharedPost({ post }) {
               ></div>
               <img
                 onClick={() => openImageViewer(0)}
-                src={post.images[0]}
-                alt={post.text}
+                src={post?.images[0]}
+                alt={post?.text}
                 style={{ width: "280px" }}
               />
             </div>
           </>
         )}
-        {post.type === "cover" && (
+        {post?.type === "cover" && (
           <>
             <div className={`${classes.images_wrap} `}>
               <img
                 onClick={() => openImageViewer(0)}
-                src={post.images[0]}
-                alt={post.text}
+                src={post?.images[0]}
+                alt={post?.text}
               />
             </div>
           </>
@@ -120,7 +120,7 @@ function SharedPost({ post }) {
         <div className={classes.header} style={{ paddingBottom: "10px" }}>
           <div className={classes.left}>
             <Link to={`/profile/${post?.user?.username}`}>
-              <img src={post.user.photo} alt="" style={{ width: "35px" }} />
+              <img src={post?.user.photo} alt="" style={{ width: "35px" }} />
             </Link>
           </div>
           <div className={classes.middle}>
@@ -129,8 +129,8 @@ function SharedPost({ post }) {
                 to={`/profile/${post?.user?.username}`}
                 className={classes.username}
               >
-                {`${post.user.first_name} ${post.user.last_name}`}
-                {post.user?.confirmed && (
+                {`${post?.user.first_name} ${post?.user.last_name}`}
+                {post?.user?.confirmed && (
                   <i
                     style={{ marginLeft: "5px" }}
                     className="confirmed_comment_icon"
@@ -138,17 +138,17 @@ function SharedPost({ post }) {
                 )}
               </Link>
 
-              {post.type === "profilePhoto" ? (
+              {post?.type === "profilePhoto" ? (
                 <span className={classes.profilePhotoText}>
                   {`updated ${
-                    post.user.gender === "male" ? "his" : "her"
+                    post?.user.gender === "male" ? "his" : "her"
                   } profile
                 picture`}
                 </span>
-              ) : post.type === "cover" ? (
+              ) : post?.type === "cover" ? (
                 <span className={classes.profilePhotoText}>
                   {`updated ${
-                    post.user.gender === "male" ? "his" : "her"
+                    post?.user.gender === "male" ? "his" : "her"
                   } profile
             cover`}
                 </span>
@@ -161,22 +161,22 @@ function SharedPost({ post }) {
               to={`/${post?.user?.username}/posts/${post?._id}`}
             >
               <Moment fromNow interval={30}>
-                {post.createdAt}
+                {post?.createdAt}
               </Moment>
               <Public color="#828387" />
             </Link>
           </div>
           <div className={classes.right}></div>
         </div>
-        {(post.type === "image" || post.type === "profilePhoto") && (
+        {(post?.type === "image" || post.type === "profilePhoto") && (
           <div
             className={classes.normal}
             style={{
-              fontSize: `${post.text.length > 40 ? "15px" : ""}`,
-              direction: `${isRTL(post.text) ? "rtl" : "ltr"}`,
+              fontSize: `${post?.text.length > 40 ? "15px" : ""}`,
+              direction: `${isRTL(post?.text) ? "rtl" : "ltr"}`,
             }}
           >
-            {post.text}
+            {post?.text}
           </div>
         )}
       </div>
