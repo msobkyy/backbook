@@ -10,7 +10,7 @@ import isRTL from "../../../../utils/isRTL";
 import { Link } from "react-router-dom";
 
 function SharedPost({ post }) {
-  const imgNum = post.images.length;
+  const imgNum = post?.images?.length;
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
