@@ -15,7 +15,7 @@ function SharedPost({ post }) {
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
   const postRef = useRef();
-  const images = post.images;
+  const images = post?.images;
 
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
