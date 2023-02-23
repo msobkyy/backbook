@@ -168,7 +168,7 @@ function SharedPost({ post }) {
           </div>
           <div className={classes.right}></div>
         </div>
-        {(post?.type === "image" || post.?type === "profilePhoto") && (
+        {(post?.type === "image" || post?.type === "profilePhoto") && (
           <div
             className={classes.normal}
             style={{
