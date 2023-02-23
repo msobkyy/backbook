@@ -326,7 +326,7 @@ function Post({ post }) {
               {post.text}
             </div>
             <div className={classes.share}>
-              <SharedPost post={post.sharedID} />
+              <SharedPost post={post?.sharedID} />
             </div>
           </>
         )}
