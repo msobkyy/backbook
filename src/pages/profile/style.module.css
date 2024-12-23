@@ -13,6 +13,7 @@
   justify-content: center;
 }
 .header {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
